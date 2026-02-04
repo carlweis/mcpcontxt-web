@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php artisan make:migration:*)",
+      "Bash(php artisan:*)",
+      "Bash(npm run types:*)",
+      "Bash(npm run build:*)",
+      "Bash(composer lint:*)",
+      "Bash(npm run lint)",
+      "Bash(curl:*)",
+      "WebSearch",
+      "Bash(ls:*)"
+    ]
+  }
+}

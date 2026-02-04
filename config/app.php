@@ -13,7 +13,32 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'MCP Contxt'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Version
+    |--------------------------------------------------------------------------
+    |
+    | This value is the current version of your application. It is used
+    | when tracking downloads and generating download URLs.
+    |
+    */
+
+    'version' => env('APP_VERSION', '1.0.0'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Launch Status
+    |--------------------------------------------------------------------------
+    |
+    | This value determines whether the application has been launched.
+    | When false, the home page shows a waitlist form. When true, it
+    | shows the download button.
+    |
+    */
+
+    'launched' => (bool) env('APP_LAUNCHED', false),
 
     /*
     |--------------------------------------------------------------------------
