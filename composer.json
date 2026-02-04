@@ -18,6 +18,7 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "larastan/larastan": "*",
         "laravel/boost": "^2.0",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.24",
@@ -25,7 +26,9 @@
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
         "pestphp/pest": "^4.3",
-        "pestphp/pest-plugin-laravel": "^4.0"
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "pestphp/pest-plugin-type-coverage": "*",
+        "rector/rector": "*"
     },
     "autoload": {
         "psr-4": {
@@ -60,13 +63,35 @@
         "lint": [
             "pint --parallel"
         ],
+        "analyse": [
+            "phpstan analyse --memory-limit=2G"
+        ],
+        "refactor": [
+            "rector process"
+        ],
+        "refactor:dry": [
+            "rector process --dry-run"
+        ],
         "test:lint": [
             "pint --parallel --test"
+        ],
+        "test:types": [
+            "pest --type-coverage --min=80"
+        ],
+        "test:coverage": [
+            "pest --coverage --min=80"
         ],
         "test": [
             "@php artisan config:clear --ansi",
             "@test:lint",
+            "@analyse",
             "@php artisan test"
+        ],
+        "test:all": [
+            "@php artisan config:clear --ansi",
+            "@test:lint",
+            "@analyse",
+            "@php artisan test --coverage"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",

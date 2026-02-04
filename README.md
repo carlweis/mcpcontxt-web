@@ -92,7 +92,28 @@ User::create([
 ## Testing
 
 ```bash
+# Run tests
 php artisan test
+
+# Run with coverage
+composer test:coverage
+
+# Run all checks (lint, analyse, tests)
+composer test:all
+```
+
+## Code Quality
+
+```bash
+# Format code (Pint)
+composer lint
+
+# Static analysis (PHPStan)
+composer analyse
+
+# Automated refactoring (Rector)
+composer refactor:dry   # Preview changes
+composer refactor       # Apply changes
 ```
 
 ## License

@@ -29,6 +29,18 @@ composer lint          # PHP (Pint)
 npm run lint           # TypeScript/React (ESLint)
 npm run format         # Prettier
 
+# Static analysis
+composer analyse       # PHPStan (level 5)
+
+# Automated refactoring
+composer refactor:dry  # Preview Rector changes
+composer refactor      # Apply Rector changes
+
+# Test coverage
+composer test:coverage # Run tests with coverage (min 80%)
+composer test:types    # Type coverage check (min 80%)
+composer test:all      # Run all checks (lint, analyse, test with coverage)
+
 # Build for production
 npm run build
 npm run build:ssr
@@ -119,10 +131,17 @@ The landing page shows a waitlist form when `APP_LAUNCHED=false` and a download 
 - PostgreSQL in development/production
 - SQLite in-memory for tests
 
-## Testing
+## Testing & Code Quality
 
+### Testing
 - **Framework:** Pest PHP
 - **Feature tests:** Use `RefreshDatabase` trait
 - **Factories:** Located in `database/factories/`
+- After login, users redirect to `/admin` (configured in `config/fortify.php`)
 
-After login, users redirect to `/admin` (configured in `config/fortify.php`).
+### Code Quality Tools
+- **Pint:** Laravel's code style fixer (PSR-12 + Laravel conventions)
+- **PHPStan/Larastan:** Static analysis at level 5
+- **Rector:** Automated refactoring and code upgrades
+- **Pest Coverage:** Test coverage reporting (minimum 80%)
+- **Type Coverage:** Type declaration coverage (minimum 80%)
