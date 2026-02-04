@@ -1,5 +1,5 @@
 import { Head, Link, useForm, usePage } from '@inertiajs/react';
-import { CheckCircle, Download, Github, Moon, Search, Server, Sun, Zap } from 'lucide-react';
+import { CheckCircle, Download, Github, Moon, Sun } from 'lucide-react';
 import { useState, type FormEventHandler } from 'react';
 import { useSyncExternalStore } from 'react';
 
@@ -22,24 +22,40 @@ const featuredServers = [
 
 const features = [
     {
-        icon: Search,
         title: 'Browse & Discover',
-        description: 'Explore a curated catalog of 100+ MCP servers. Find the perfect tools for your workflow.',
+        description:
+            'Explore a curated catalog of 100+ MCP servers. Search by name, category, or capability to find the perfect tools for your workflow. Each server includes detailed descriptions, usage examples, and configuration options.',
+        screenshot: '/images/screenshots/browse-mcp-servers.png',
     },
     {
-        icon: Zap,
         title: 'One-Click Install',
-        description: 'Add servers to Claude Code with a single click. No manual configuration required.',
+        description:
+            'Adding a new MCP server is as simple as clicking a button. No more manually editing JSON configuration files or running terminal commands. MCP Contxt handles all the setup for you automatically.',
+        screenshot: '/images/screenshots/add-mcp-server.png',
     },
     {
-        icon: Server,
-        title: 'Status Monitoring',
-        description: 'See which servers are running at a glance from your menu bar.',
+        title: 'Menu Bar Access',
+        description:
+            "Access your MCP servers instantly from your menu bar. See which servers are running, quickly enable or disable them, and monitor their status—all without leaving your current workflow.",
+        screenshot: '/images/screenshots/menubar-mcp-server-list.png',
     },
     {
-        icon: CheckCircle,
-        title: 'Auto-Sync',
-        description: 'Changes sync automatically to your Claude Code configuration. Always up to date.',
+        title: 'Server Details',
+        description:
+            'Get comprehensive information about each server including available tools, required permissions, and configuration options. Understand exactly what capabilities each server provides before installing.',
+        screenshot: '/images/screenshots/server-details.png',
+    },
+    {
+        title: 'Manage Installed Servers',
+        description:
+            'Keep track of all your installed MCP servers in one place. Enable, disable, or remove servers with a single click. Your configuration syncs automatically with Claude Code.',
+        screenshot: '/images/screenshots/installed-mcp-servers.png',
+    },
+    {
+        title: 'Import & Export',
+        description:
+            'Easily share your server configuration across machines or with your team. Export your setup to a file and import it anywhere. Perfect for maintaining consistent development environments.',
+        screenshot: '/images/screenshots/import-export-servers.png',
     },
 ];
 
@@ -131,120 +147,111 @@ export default function Home({ launched, version }: Props) {
 
                 {/* Hero */}
                 <section className="relative overflow-hidden">
+                    {/* Background gradient */}
                     <div className="absolute inset-0 -z-10">
                         <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f4] to-transparent dark:from-[#161615] dark:to-transparent" />
-                        <div className="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-teal-500/10 blur-3xl dark:from-purple-500/5 dark:via-blue-500/5 dark:to-teal-500/5" />
+                        <div className="absolute right-0 top-0 h-[600px] w-[600px] rounded-full bg-gradient-to-l from-[#DD2C25]/15 via-[#DD2C25]/5 to-transparent blur-3xl" />
                     </div>
 
-                    <div className="mx-auto max-w-6xl px-6 pb-24 pt-20 text-center md:pb-32 md:pt-28">
-                        <img
-                            src="/images/app-icon.png"
-                            alt="MCP Contxt"
-                            className="mx-auto mb-8 size-24 rounded-2xl shadow-lg"
-                        />
+                    <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+                        <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
+                            {/* Text content */}
+                            <div className="w-full text-center lg:w-1/2 lg:text-left">
+                                <h1 className="mb-6 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+                                    MCP server
+                                    <br />
+                                    management
+                                    <br />
+                                    <span className="text-[#DD2C25]">perfected</span>
+                                </h1>
 
-                        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#e3e3e0] bg-white px-4 py-1.5 text-sm text-[#706f6c] dark:border-[#3E3E3A] dark:bg-[#161615] dark:text-[#A1A09A]">
-                            <span className="size-2 animate-pulse rounded-full bg-emerald-500" />
-                            {launched ? `Version ${version} available` : 'Coming soon'}
-                        </div>
+                                <p className="mb-8 text-lg text-[#706f6c] dark:text-[#A1A09A]">
+                                    Browse, install, and manage MCP servers for Claude Code from your menu bar. No more
+                                    editing JSON files. No more terminal commands.
+                                </p>
 
-                        <h1 className="mb-6 text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-                            The missing manager for
-                            <br />
-                            <span className="bg-gradient-to-r from-[#1b1b18] via-[#706f6c] to-[#1b1b18] bg-clip-text text-transparent dark:from-[#EDEDEC] dark:via-[#706f6c] dark:to-[#EDEDEC]">
-                                MCP servers
-                            </span>
-                        </h1>
-
-                        <p className="mx-auto mb-10 max-w-2xl text-lg text-[#706f6c] dark:text-[#A1A09A]">
-                            Browse, install, and manage MCP servers for Claude Code from your menu bar. No more editing
-                            JSON files. No more terminal commands.
-                        </p>
-
-                        {launched ? (
-                            <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-                                <a
-                                    href="/download"
-                                    className="inline-flex h-12 items-center gap-2 rounded-lg bg-[#1b1b18] px-6 text-base font-medium text-white shadow-lg shadow-[#1b1b18]/20 transition-all hover:bg-[#2d2d2a] hover:shadow-xl hover:shadow-[#1b1b18]/25 dark:bg-[#EDEDEC] dark:text-[#1b1b18] dark:shadow-[#EDEDEC]/10 dark:hover:bg-white"
-                                >
-                                    <Download className="size-5" />
-                                    Download for macOS
-                                </a>
-                                <span className="text-sm text-[#706f6c] dark:text-[#A1A09A]">
-                                    Requires macOS 15.0+
-                                </span>
-                            </div>
-                        ) : (
-                            <form onSubmit={submit} className="mx-auto max-w-md">
-                                <div className="flex gap-2">
-                                    <Input
-                                        type="email"
-                                        value={data.email}
-                                        onChange={(e) => setData('email', e.target.value)}
-                                        placeholder="you@example.com"
-                                        className="h-12 flex-1 border-[#e3e3e0] bg-white text-base dark:border-[#3E3E3A] dark:bg-[#161615]"
-                                        disabled={processing || subscribed}
-                                    />
-                                    <Button
-                                        type="submit"
-                                        disabled={processing || subscribed}
-                                        className="h-12 px-6 text-base"
-                                    >
-                                        {subscribed ? 'Added!' : 'Join Waitlist'}
-                                    </Button>
-                                </div>
-                                {errors.email && <p className="mt-2 text-sm text-red-500">{errors.email}</p>}
-                                {subscribed && (
-                                    <div className="mt-6 rounded-xl border border-emerald-200 bg-emerald-50 p-6 dark:border-emerald-800 dark:bg-emerald-950/50">
-                                        <div className="flex items-center justify-center gap-3 mb-3">
-                                            <div className="flex size-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900">
-                                                <CheckCircle className="size-5 text-emerald-600 dark:text-emerald-400" />
+                                {launched ? (
+                                    <div className="flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
+                                        <Button asChild size="lg" className="h-12 px-8 text-base">
+                                            <a href="/download">
+                                                <Download className="size-5" />
+                                                Download for macOS
+                                            </a>
+                                        </Button>
+                                        <span className="text-sm text-[#706f6c] dark:text-[#A1A09A]">
+                                            Requires macOS 14.6+
+                                        </span>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <form onSubmit={submit} className="max-w-md lg:mx-0">
+                                            <div className="flex gap-2">
+                                                <Input
+                                                    type="email"
+                                                    value={data.email}
+                                                    onChange={(e) => setData('email', e.target.value)}
+                                                    placeholder="you@example.com"
+                                                    className="h-12 flex-1 border-[#e3e3e0] bg-white text-base dark:border-[#3E3E3A] dark:bg-[#161615]"
+                                                    disabled={processing || subscribed}
+                                                />
+                                                <Button
+                                                    type="submit"
+                                                    disabled={processing || subscribed}
+                                                    className="h-12 px-6 text-base"
+                                                >
+                                                    {subscribed ? 'Added!' : 'Join Waitlist'}
+                                                </Button>
                                             </div>
-                                        </div>
-                                        <p className="text-lg font-medium text-emerald-900 dark:text-emerald-100">
-                                            You're on the list!
-                                        </p>
-                                        <p className="mt-1 text-sm text-emerald-700 dark:text-emerald-300">
-                                            We'll email you when MCP Contxt is ready to download.
-                                        </p>
+                                            {errors.email && (
+                                                <p className="mt-2 text-sm text-red-500">{errors.email}</p>
+                                            )}
+                                        </form>
+                                        {subscribed && (
+                                            <div className="mt-6 max-w-md rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center dark:border-emerald-800 dark:bg-emerald-950/50 lg:mx-0">
+                                                <div className="mb-3 flex items-center justify-center gap-3">
+                                                    <div className="flex size-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900">
+                                                        <CheckCircle className="size-5 text-emerald-600 dark:text-emerald-400" />
+                                                    </div>
+                                                </div>
+                                                <p className="text-lg font-medium text-emerald-900 dark:text-emerald-100">
+                                                    You're on the list!
+                                                </p>
+                                                <p className="mt-1 text-sm text-emerald-700 dark:text-emerald-300">
+                                                    We'll email you when MCP Contxt is ready to download.
+                                                </p>
+                                            </div>
+                                        )}
                                     </div>
                                 )}
-                            </form>
-                        )}
 
-                        <p className="mt-6 text-sm text-[#a1a09a] dark:text-[#706f6c]">
-                            Free & Open Source • MIT License
-                        </p>
-                    </div>
-                </section>
+                                <p className="mt-6 text-sm text-[#a1a09a] dark:text-[#706f6c]">
+                                    Free & Open Source • MIT License
+                                </p>
+                            </div>
 
-                {/* Screenshots */}
-                <section className="border-y border-[#e3e3e0] bg-[#f5f5f4] py-20 dark:border-[#3E3E3A] dark:bg-[#161615]">
-                    <div className="mx-auto max-w-6xl px-6">
-                        <div className="grid gap-6 md:grid-cols-3">
-                            {['Menu Bar', 'Browse Servers', 'Server Details'].map((title, i) => (
-                                <div key={title} className="group relative overflow-hidden rounded-xl border border-[#e3e3e0] bg-white shadow-sm transition-shadow hover:shadow-lg dark:border-[#3E3E3A] dark:bg-[#1f1f1e]">
-                                    <div className="aspect-[4/3] bg-gradient-to-br from-[#f5f5f4] to-[#e3e3e0] dark:from-[#2a2a28] dark:to-[#1f1f1e]">
-                                        <div className="flex h-full items-center justify-center text-[#a1a09a]">
-                                            <span className="text-sm">Screenshot {i + 1}</span>
-                                        </div>
-                                    </div>
-                                    <div className="p-4">
-                                        <p className="text-center text-sm font-medium text-[#706f6c] dark:text-[#A1A09A]">
-                                            {title}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
+                            {/* Screenshot */}
+                            <div className="w-full lg:w-1/2">
+                                <img
+                                    src="/images/screenshots/menubar-mcp-server-list.png"
+                                    alt="MCP Contxt Menu Bar"
+                                    className="w-full rounded-xl shadow-2xl"
+                                />
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Featured Servers */}
-                <section className="py-20">
+                <section className="relative bg-[#f5f5f4] py-20 dark:bg-[#161615]">
+                    {/* Gradient border top */}
+                    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#DD2C25]/40 to-transparent" />
+                    {/* Gradient border bottom */}
+                    <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#DD2C25]/40 to-transparent" />
                     <div className="mx-auto max-w-6xl px-6 text-center">
                         <h2 className="mb-3 text-2xl font-semibold">Works with 100+ MCP servers</h2>
-                        <p className="mb-12 text-[#706f6c] dark:text-[#A1A09A]">Including popular services you already use</p>
+                        <p className="mb-12 text-[#706f6c] dark:text-[#A1A09A]">
+                            Including popular services you already use
+                        </p>
 
                         <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14">
                             {featuredServers.map((server) => (
@@ -258,7 +265,9 @@ export default function Home({ launched, version }: Props) {
                                 </div>
                             ))}
                             <div className="flex flex-col items-center gap-3">
-                                <span className="flex size-12 items-center justify-center text-lg font-semibold text-emerald-600 dark:text-emerald-400">+95</span>
+                                <span className="flex size-12 items-center justify-center text-lg font-semibold text-[#DD2C25]">
+                                    +95
+                                </span>
                                 <span className="text-sm text-[#706f6c] dark:text-[#A1A09A]">more</span>
                             </div>
                         </div>
@@ -266,92 +275,57 @@ export default function Home({ launched, version }: Props) {
                 </section>
 
                 {/* Features */}
-                <section className="border-y border-[#e3e3e0] bg-[#f5f5f4] py-20 dark:border-[#3E3E3A] dark:bg-[#161615]">
-                    <div className="mx-auto max-w-6xl px-6">
-                        <div className="mb-12 text-center">
-                            <h2 className="mb-3 text-2xl font-semibold">Everything you need</h2>
-                            <p className="text-[#706f6c] dark:text-[#A1A09A]">
-                                A thoughtfully designed experience for managing your MCP servers
-                            </p>
-                        </div>
+                {features.map((feature, index) => (
+                    <section
+                        key={feature.title}
+                        className={`py-20 ${index % 2 === 0 ? 'bg-[#f5f5f4] dark:bg-[#161615]' : ''}`}
+                    >
+                        <div className="mx-auto max-w-6xl px-6">
+                            <div
+                                className={`flex flex-col items-center gap-12 lg:flex-row lg:gap-16 ${
+                                    index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                                }`}
+                            >
+                                {/* Screenshot */}
+                                <div className="w-full lg:w-1/2">
+                                    <img
+                                        src={feature.screenshot}
+                                        alt={feature.title}
+                                        className="w-full rounded-xl border border-[#e3e3e0] shadow-xl dark:border-[#3E3E3A]"
+                                    />
+                                </div>
 
-                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                            {features.map((feature) => (
-                                <div
-                                    key={feature.title}
-                                    className="rounded-xl border border-[#e3e3e0] bg-white p-6 transition-shadow hover:shadow-md dark:border-[#3E3E3A] dark:bg-[#1f1f1e]"
-                                >
-                                    <div className="mb-4 flex size-10 items-center justify-center rounded-lg bg-[#f5f5f4] dark:bg-[#2a2a28]">
-                                        <feature.icon className="size-5 text-[#706f6c] dark:text-[#A1A09A]" />
-                                    </div>
-                                    <h3 className="mb-2 font-medium">{feature.title}</h3>
-                                    <p className="text-sm leading-relaxed text-[#706f6c] dark:text-[#A1A09A]">
+                                {/* Text */}
+                                <div className="w-full lg:w-1/2">
+                                    <h2 className="mb-4 text-3xl font-semibold">{feature.title}</h2>
+                                    <p className="text-lg leading-relaxed text-[#706f6c] dark:text-[#A1A09A]">
                                         {feature.description}
                                     </p>
                                 </div>
-                            ))}
+                            </div>
                         </div>
-                    </div>
-                </section>
-
-                {/* How it works */}
-                <section className="py-20">
-                    <div className="mx-auto max-w-6xl px-6">
-                        <div className="mb-12 text-center">
-                            <h2 className="mb-3 text-2xl font-semibold">Get started in minutes</h2>
-                            <p className="text-[#706f6c] dark:text-[#A1A09A]">
-                                Three simple steps to supercharge your Claude Code
-                            </p>
-                        </div>
-
-                        <div className="grid gap-8 md:grid-cols-3">
-                            {[
-                                {
-                                    step: '1',
-                                    title: 'Download & Install',
-                                    description: 'Download MCP Contxt and drag it to your Applications folder.',
-                                },
-                                {
-                                    step: '2',
-                                    title: 'Browse & Add Servers',
-                                    description: 'Explore the catalog and add servers with a single click.',
-                                },
-                                {
-                                    step: '3',
-                                    title: 'Use in Claude Code',
-                                    description: 'Servers appear automatically. Start using them right away.',
-                                },
-                            ].map((item) => (
-                                <div key={item.step} className="text-center">
-                                    <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-[#1b1b18] text-lg font-semibold text-white dark:bg-[#EDEDEC] dark:text-[#1b1b18]">
-                                        {item.step}
-                                    </div>
-                                    <h3 className="mb-2 font-medium">{item.title}</h3>
-                                    <p className="text-sm text-[#706f6c] dark:text-[#A1A09A]">{item.description}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                ))}
 
                 {/* CTA */}
-                <section className="border-t border-[#e3e3e0] bg-gradient-to-b from-[#f5f5f4] to-[#FDFDFC] py-20 dark:border-[#3E3E3A] dark:from-[#161615] dark:to-[#0a0a0a]">
+                <section className="relative bg-gradient-to-b from-[#f5f5f4] to-[#FDFDFC] py-24 dark:from-[#161615] dark:to-[#0a0a0a]">
+                    {/* Gradient border top */}
+                    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#DD2C25]/40 to-transparent" />
                     <div className="mx-auto max-w-6xl px-6 text-center">
-                        <h2 className="mb-4 text-2xl font-semibold">Ready to simplify your workflow?</h2>
-                        <p className="mb-8 text-[#706f6c] dark:text-[#A1A09A]">
+                        <h2 className="mb-4 text-3xl font-semibold">Ready to simplify your workflow?</h2>
+                        <p className="mb-8 text-lg text-[#706f6c] dark:text-[#A1A09A]">
                             {launched
                                 ? 'Download MCP Contxt and start managing your servers today.'
                                 : 'Join the waitlist to be notified when MCP Contxt launches.'}
                         </p>
 
                         {launched ? (
-                            <a
-                                href="/download"
-                                className="inline-flex h-12 items-center gap-2 rounded-lg bg-[#1b1b18] px-6 text-base font-medium text-white shadow-lg shadow-[#1b1b18]/20 transition-all hover:bg-[#2d2d2a] hover:shadow-xl hover:shadow-[#1b1b18]/25 dark:bg-[#EDEDEC] dark:text-[#1b1b18] dark:shadow-[#EDEDEC]/10 dark:hover:bg-white"
-                            >
-                                <Download className="size-5" />
-                                Download for macOS
-                            </a>
+                            <Button asChild size="lg" className="h-12 px-8 text-base">
+                                <a href="/download">
+                                    <Download className="size-5" />
+                                    Download for macOS
+                                </a>
+                            </Button>
                         ) : (
                             <form onSubmit={submit} className="mx-auto max-w-md">
                                 <div className="flex gap-2">
@@ -377,7 +351,9 @@ export default function Home({ launched, version }: Props) {
                 </section>
 
                 {/* Footer */}
-                <footer className="border-t border-[#e3e3e0] py-8 dark:border-[#3E3E3A]">
+                <footer className="relative py-8">
+                    {/* Gradient border top */}
+                    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#DD2C25]/40 to-transparent" />
                     <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-[#706f6c] sm:flex-row dark:text-[#A1A09A]">
                         <div className="flex items-center gap-2">
                             <img src="/images/app-icon.png" alt="MCP Contxt" className="size-6 rounded" />
