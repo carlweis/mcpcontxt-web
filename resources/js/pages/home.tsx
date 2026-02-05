@@ -427,7 +427,7 @@ export default function Home({ launched }: Props) {
                             <img src="/images/app-icon.png" alt="MCP Contxt" className="size-6 rounded" />
                             <span>MCP Contxt</span>
                         </div>
-                        <span>© {new Date().getFullYear()} MCP Contxt</span>
+                        <span>(C) 2026 OpcodeZero</span>
                     </div>
                 </footer>
             </div>

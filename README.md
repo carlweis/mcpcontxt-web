@@ -118,8 +118,4 @@ composer refactor       # Apply changes
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
-
-## Author
-
-Carl Weis ([@carlweis](https://github.com/carlweis))
+(C) 2026 OpcodeZero
