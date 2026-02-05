@@ -2,13 +2,15 @@
 
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\DownloadRequestController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SubscriberController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 Route::post('/subscribe', [SubscriberController::class, 'store'])->name('subscribe');
-Route::get('/download', DownloadController::class)->name('download');
+Route::post('/download/request', DownloadRequestController::class)->name('download.request');
+Route::get('/download', DownloadController::class)->name('download')->middleware('signed');
 
 // Redirect /dashboard to /admin for backwards compatibility
 Route::redirect('/dashboard', '/admin')->name('dashboard');

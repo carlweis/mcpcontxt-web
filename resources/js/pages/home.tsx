@@ -1,5 +1,5 @@
 import { Head, Link, useForm, usePage } from '@inertiajs/react';
-import { CheckCircle, Download, Github, Moon, Sun } from 'lucide-react';
+import { CheckCircle, Download, Mail, Moon, Sun } from 'lucide-react';
 import { useState, type FormEventHandler } from 'react';
 import { useSyncExternalStore } from 'react';
 
@@ -86,18 +86,29 @@ function useAppearance() {
     return { appearance, toggleAppearance };
 }
 
-export default function Home({ launched, version }: Props) {
+export default function Home({ launched }: Props) {
     const { auth } = usePage<SharedData>().props;
     const { appearance, toggleAppearance } = useAppearance();
     const [subscribed, setSubscribed] = useState(false);
-    const { data, setData, post, processing, errors } = useForm({
-        email: '',
-    });
+    const [downloadRequested, setDownloadRequested] = useState(false);
 
-    const submit: FormEventHandler = (e) => {
+    // Waitlist form
+    const waitlistForm = useForm({ email: '' });
+
+    // Download request form
+    const downloadForm = useForm({ email: '' });
+
+    const submitWaitlist: FormEventHandler = (e) => {
         e.preventDefault();
-        post('/subscribe', {
+        waitlistForm.post('/subscribe', {
             onSuccess: () => setSubscribed(true),
+        });
+    };
+
+    const submitDownloadRequest: FormEventHandler = (e) => {
+        e.preventDefault();
+        downloadForm.post('/download/request', {
+            onSuccess: () => setDownloadRequested(true),
         });
     };
 
@@ -124,15 +135,6 @@ export default function Home({ launched, version }: Props) {
                             <Button variant="ghost" size="icon" onClick={toggleAppearance} className="size-9">
                                 {appearance === 'light' ? <Moon className="size-4" /> : <Sun className="size-4" />}
                             </Button>
-                            <a
-                                href="https://github.com/carlweis/mcpcontxt"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium text-[#706f6c] transition-colors hover:text-[#1b1b18] dark:text-[#A1A09A] dark:hover:text-[#EDEDEC]"
-                            >
-                                <Github className="size-4" />
-                                <span className="hidden sm:inline">GitHub</span>
-                            </a>
                             {auth.user ? (
                                 <Link
                                     href="/admin"
@@ -171,39 +173,75 @@ export default function Home({ launched, version }: Props) {
                                 </p>
 
                                 {launched ? (
-                                    <div className="flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
-                                        <Button asChild size="lg" className="h-12 px-8 text-base">
-                                            <a href="/download">
-                                                <Download className="size-5" />
-                                                Download for macOS
-                                            </a>
-                                        </Button>
-                                        <span className="text-sm text-[#706f6c] dark:text-[#A1A09A]">
-                                            Requires macOS 14.6+
-                                        </span>
+                                    <div>
+                                        {downloadRequested ? (
+                                            <div className="max-w-md rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center dark:border-emerald-800 dark:bg-emerald-950/50 lg:mx-0">
+                                                <div className="mb-3 flex items-center justify-center gap-3">
+                                                    <div className="flex size-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900">
+                                                        <Mail className="size-5 text-emerald-600 dark:text-emerald-400" />
+                                                    </div>
+                                                </div>
+                                                <p className="text-lg font-medium text-emerald-900 dark:text-emerald-100">
+                                                    Check your email!
+                                                </p>
+                                                <p className="mt-1 text-sm text-emerald-700 dark:text-emerald-300">
+                                                    We've sent you a download link. The link expires in 24 hours.
+                                                </p>
+                                            </div>
+                                        ) : (
+                                            <form onSubmit={submitDownloadRequest} className="max-w-md lg:mx-0">
+                                                <p className="mb-3 text-sm text-[#706f6c] dark:text-[#A1A09A]">
+                                                    Enter your email to get the download link:
+                                                </p>
+                                                <div className="flex gap-2">
+                                                    <Input
+                                                        type="email"
+                                                        value={downloadForm.data.email}
+                                                        onChange={(e) => downloadForm.setData('email', e.target.value)}
+                                                        placeholder="you@example.com"
+                                                        className="h-12 flex-1 border-[#e3e3e0] bg-white text-base dark:border-[#3E3E3A] dark:bg-[#161615]"
+                                                        disabled={downloadForm.processing}
+                                                    />
+                                                    <Button
+                                                        type="submit"
+                                                        disabled={downloadForm.processing}
+                                                        className="h-12 px-6 text-base"
+                                                    >
+                                                        <Download className="size-5" />
+                                                        Get Download
+                                                    </Button>
+                                                </div>
+                                                {downloadForm.errors.email && (
+                                                    <p className="mt-2 text-sm text-red-500">{downloadForm.errors.email}</p>
+                                                )}
+                                                <p className="mt-3 text-sm text-[#a1a09a] dark:text-[#706f6c]">
+                                                    Requires macOS 14.6+
+                                                </p>
+                                            </form>
+                                        )}
                                     </div>
                                 ) : (
                                     <div>
-                                        <form onSubmit={submit} className="max-w-md lg:mx-0">
+                                        <form onSubmit={submitWaitlist} className="max-w-md lg:mx-0">
                                             <div className="flex gap-2">
                                                 <Input
                                                     type="email"
-                                                    value={data.email}
-                                                    onChange={(e) => setData('email', e.target.value)}
+                                                    value={waitlistForm.data.email}
+                                                    onChange={(e) => waitlistForm.setData('email', e.target.value)}
                                                     placeholder="you@example.com"
                                                     className="h-12 flex-1 border-[#e3e3e0] bg-white text-base dark:border-[#3E3E3A] dark:bg-[#161615]"
-                                                    disabled={processing || subscribed}
+                                                    disabled={waitlistForm.processing || subscribed}
                                                 />
                                                 <Button
                                                     type="submit"
-                                                    disabled={processing || subscribed}
+                                                    disabled={waitlistForm.processing || subscribed}
                                                     className="h-12 px-6 text-base"
                                                 >
                                                     {subscribed ? 'Added!' : 'Join Waitlist'}
                                                 </Button>
                                             </div>
-                                            {errors.email && (
-                                                <p className="mt-2 text-sm text-red-500">{errors.email}</p>
+                                            {waitlistForm.errors.email && (
+                                                <p className="mt-2 text-sm text-red-500">{waitlistForm.errors.email}</p>
                                             )}
                                         </form>
                                         {subscribed && (
@@ -315,31 +353,64 @@ export default function Home({ launched, version }: Props) {
                         <h2 className="mb-4 text-3xl font-semibold">Ready to simplify your workflow?</h2>
                         <p className="mb-8 text-lg text-[#706f6c] dark:text-[#A1A09A]">
                             {launched
-                                ? 'Download MCP Contxt and start managing your servers today.'
+                                ? 'Enter your email and we\'ll send you the download link.'
                                 : 'Join the waitlist to be notified when MCP Contxt launches.'}
                         </p>
 
                         {launched ? (
-                            <Button asChild size="lg" className="h-12 px-8 text-base">
-                                <a href="/download">
-                                    <Download className="size-5" />
-                                    Download for macOS
-                                </a>
-                            </Button>
+                            downloadRequested ? (
+                                <div className="mx-auto max-w-md rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center dark:border-emerald-800 dark:bg-emerald-950/50">
+                                    <div className="mb-3 flex items-center justify-center gap-3">
+                                        <div className="flex size-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900">
+                                            <Mail className="size-5 text-emerald-600 dark:text-emerald-400" />
+                                        </div>
+                                    </div>
+                                    <p className="text-lg font-medium text-emerald-900 dark:text-emerald-100">
+                                        Check your email!
+                                    </p>
+                                    <p className="mt-1 text-sm text-emerald-700 dark:text-emerald-300">
+                                        We've sent you a download link. The link expires in 24 hours.
+                                    </p>
+                                </div>
+                            ) : (
+                                <form onSubmit={submitDownloadRequest} className="mx-auto max-w-md">
+                                    <div className="flex gap-2">
+                                        <Input
+                                            type="email"
+                                            value={downloadForm.data.email}
+                                            onChange={(e) => downloadForm.setData('email', e.target.value)}
+                                            placeholder="you@example.com"
+                                            className="h-12 flex-1 border-[#e3e3e0] bg-white text-base dark:border-[#3E3E3A] dark:bg-[#161615]"
+                                            disabled={downloadForm.processing}
+                                        />
+                                        <Button
+                                            type="submit"
+                                            disabled={downloadForm.processing}
+                                            className="h-12 px-6 text-base"
+                                        >
+                                            <Download className="size-5" />
+                                            Get Download
+                                        </Button>
+                                    </div>
+                                    {downloadForm.errors.email && (
+                                        <p className="mt-2 text-sm text-red-500">{downloadForm.errors.email}</p>
+                                    )}
+                                </form>
+                            )
                         ) : (
-                            <form onSubmit={submit} className="mx-auto max-w-md">
+                            <form onSubmit={submitWaitlist} className="mx-auto max-w-md">
                                 <div className="flex gap-2">
                                     <Input
                                         type="email"
-                                        value={data.email}
-                                        onChange={(e) => setData('email', e.target.value)}
+                                        value={waitlistForm.data.email}
+                                        onChange={(e) => waitlistForm.setData('email', e.target.value)}
                                         placeholder="you@example.com"
                                         className="h-12 flex-1 border-[#e3e3e0] bg-white text-base dark:border-[#3E3E3A] dark:bg-[#161615]"
-                                        disabled={processing || subscribed}
+                                        disabled={waitlistForm.processing || subscribed}
                                     />
                                     <Button
                                         type="submit"
-                                        disabled={processing || subscribed}
+                                        disabled={waitlistForm.processing || subscribed}
                                         className="h-12 px-6 text-base"
                                     >
                                         {subscribed ? 'Added!' : 'Join Waitlist'}
@@ -360,14 +431,6 @@ export default function Home({ launched, version }: Props) {
                             <span>MCP Contxt</span>
                         </div>
                         <div className="flex items-center gap-6">
-                            <a
-                                href="https://github.com/carlweis/mcpcontxt"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="transition-colors hover:text-[#1b1b18] dark:hover:text-[#EDEDEC]"
-                            >
-                                GitHub
-                            </a>
                             <span>MIT License</span>
                             <span>Built for the Claude community</span>
                         </div>
