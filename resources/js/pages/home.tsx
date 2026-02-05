@@ -262,9 +262,6 @@ export default function Home({ launched }: Props) {
                                     </div>
                                 )}
 
-                                <p className="mt-6 text-sm text-[#a1a09a] dark:text-[#706f6c]">
-                                    Free & Open Source • MIT License
-                                </p>
                             </div>
 
                             {/* Screenshot */}
@@ -430,10 +427,7 @@ export default function Home({ launched }: Props) {
                             <img src="/images/app-icon.png" alt="MCP Contxt" className="size-6 rounded" />
                             <span>MCP Contxt</span>
                         </div>
-                        <div className="flex items-center gap-6">
-                            <span>MIT License</span>
-                            <span>Built for the Claude community</span>
-                        </div>
+                        <span>© {new Date().getFullYear()} MCP Contxt</span>
                     </div>
                 </footer>
             </div>
