@@ -12,7 +12,8 @@
       "Bash(ls:*)",
       "WebFetch(domain:herd.laravel.com)",
       "Bash(./vendor/bin/phpstan:*)",
-      "Bash(./vendor/bin/rector process:*)"
+      "Bash(./vendor/bin/rector process:*)",
+      "Bash(composer analyse:*)"
     ]
   }
 }
