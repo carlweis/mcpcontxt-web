@@ -13,11 +13,23 @@ interface Props {
 }
 
 const featuredServers = [
-    { name: 'Linear', icon: '/images/servers/linear.svg?v=2', darkIcon: '/images/servers/linear-dark.svg?v=2' },
-    { name: 'Notion', icon: '/images/servers/notion.svg?v=2', darkIcon: '/images/servers/notion-light.svg?v=2' },
+    {
+        name: 'Linear',
+        icon: '/images/servers/linear.svg?v=2',
+        darkIcon: '/images/servers/linear-dark.svg?v=2',
+    },
+    {
+        name: 'Notion',
+        icon: '/images/servers/notion.svg?v=2',
+        darkIcon: '/images/servers/notion-light.svg?v=2',
+    },
     { name: 'Figma', icon: '/images/servers/figma.svg?v=2' },
     { name: 'Slack', icon: '/images/servers/slack.svg?v=2' },
-    { name: 'GitHub', icon: '/images/servers/github.svg?v=2', darkIcon: '/images/servers/github-light.svg?v=2' },
+    {
+        name: 'GitHub',
+        icon: '/images/servers/github.svg?v=2',
+        darkIcon: '/images/servers/github-light.svg?v=2',
+    },
 ];
 
 const features = [
@@ -36,7 +48,7 @@ const features = [
     {
         title: 'Menu Bar Access',
         description:
-            "Access your MCP servers instantly from your menu bar. See which servers are running, quickly enable or disable them, and monitor their status—all without leaving your current workflow.",
+            'Access your MCP servers instantly from your menu bar. See which servers are running, quickly enable or disable them, and monitor their status—all without leaving your current workflow.',
         screenshot: '/images/screenshots/menubar-mcp-server-list.png',
     },
     {
@@ -61,9 +73,14 @@ const features = [
 
 function getAppearance(): 'light' | 'dark' {
     if (typeof window === 'undefined') return 'light';
-    const stored = localStorage.getItem('appearance') as 'light' | 'dark' | null;
+    const stored = localStorage.getItem('appearance') as
+        | 'light'
+        | 'dark'
+        | null;
     if (stored) return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
 }
 
 function useAppearance() {
@@ -73,7 +90,7 @@ function useAppearance() {
             return () => window.removeEventListener('storage', callback);
         },
         getAppearance,
-        () => 'light' as const
+        () => 'light' as const,
     );
 
     const toggleAppearance = () => {
@@ -116,7 +133,10 @@ export default function Home({ launched }: Props) {
         <>
             <Head title="MCP Contxt - Manage MCP Servers for Claude Code">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
-                <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+                <link
+                    href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600"
+                    rel="stylesheet"
+                />
                 <meta
                     name="description"
                     content="The missing management interface for MCP servers in Claude Code. Browse, install, and manage 100+ servers from your menu bar."
@@ -128,12 +148,27 @@ export default function Home({ launched }: Props) {
                 <nav className="sticky top-0 z-50 border-b border-[#e3e3e0] bg-[#FDFDFC]/80 backdrop-blur-xl dark:border-[#3E3E3A] dark:bg-[#0a0a0a]/80">
                     <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
                         <div className="flex items-center gap-2">
-                            <img src="/images/app-icon.png" alt="MCP Contxt" className="size-8 rounded-lg" />
-                            <span className="text-lg font-semibold">MCP Contxt</span>
+                            <img
+                                src="/images/app-icon.png"
+                                alt="MCP Contxt"
+                                className="size-8 rounded-lg"
+                            />
+                            <span className="text-lg font-semibold">
+                                MCP Contxt
+                            </span>
                         </div>
                         <div className="flex items-center gap-3">
-                            <Button variant="ghost" size="icon" onClick={toggleAppearance} className="size-9">
-                                {appearance === 'light' ? <Moon className="size-4" /> : <Sun className="size-4" />}
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={toggleAppearance}
+                                className="size-9"
+                            >
+                                {appearance === 'light' ? (
+                                    <Moon className="size-4" />
+                                ) : (
+                                    <Sun className="size-4" />
+                                )}
                             </Button>
                             {auth.user ? (
                                 <Link
@@ -152,7 +187,7 @@ export default function Home({ launched }: Props) {
                     {/* Background gradient */}
                     <div className="absolute inset-0 -z-10">
                         <div className="absolute inset-0 bg-gradient-to-b from-[#f5f5f4] to-transparent dark:from-[#161615] dark:to-transparent" />
-                        <div className="absolute right-0 top-0 h-[600px] w-[600px] rounded-full bg-gradient-to-l from-[#DD2C25]/15 via-[#DD2C25]/5 to-transparent blur-3xl" />
+                        <div className="absolute top-0 right-0 h-[600px] w-[600px] rounded-full bg-gradient-to-l from-[#DD2C25]/15 via-[#DD2C25]/5 to-transparent blur-3xl" />
                     </div>
 
                     <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
@@ -164,18 +199,22 @@ export default function Home({ launched }: Props) {
                                     <br />
                                     management
                                     <br />
-                                    <span className="text-[#DD2C25]">perfected</span>
+                                    <span className="text-[#DD2C25]">
+                                        perfected
+                                    </span>
                                 </h1>
 
                                 <p className="mb-8 text-lg text-[#706f6c] dark:text-[#A1A09A]">
-                                    Browse, install, and manage MCP servers for Claude Code from your menu bar. No more
-                                    editing JSON files. No more terminal commands.
+                                    Browse, install, and manage MCP servers for
+                                    Claude Code from your menu bar. No more
+                                    editing JSON files. No more terminal
+                                    commands.
                                 </p>
 
                                 {launched ? (
                                     <div>
                                         {downloadRequested ? (
-                                            <div className="max-w-md rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center dark:border-emerald-800 dark:bg-emerald-950/50 lg:mx-0">
+                                            <div className="max-w-md rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center lg:mx-0 dark:border-emerald-800 dark:bg-emerald-950/50">
                                                 <div className="mb-3 flex items-center justify-center gap-3">
                                                     <div className="flex size-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900">
                                                         <Mail className="size-5 text-emerald-600 dark:text-emerald-400" />
@@ -185,26 +224,44 @@ export default function Home({ launched }: Props) {
                                                     Check your email!
                                                 </p>
                                                 <p className="mt-1 text-sm text-emerald-700 dark:text-emerald-300">
-                                                    We've sent you a download link. The link expires in 24 hours.
+                                                    We've sent you a download
+                                                    link. The link expires in 24
+                                                    hours.
                                                 </p>
                                             </div>
                                         ) : (
-                                            <form onSubmit={submitDownloadRequest} className="max-w-md lg:mx-0">
+                                            <form
+                                                onSubmit={submitDownloadRequest}
+                                                className="max-w-md lg:mx-0"
+                                            >
                                                 <p className="mb-3 text-sm text-[#706f6c] dark:text-[#A1A09A]">
-                                                    Enter your email to get the download link:
+                                                    Enter your email to get the
+                                                    download link:
                                                 </p>
                                                 <div className="flex gap-2">
                                                     <Input
                                                         type="email"
-                                                        value={downloadForm.data.email}
-                                                        onChange={(e) => downloadForm.setData('email', e.target.value)}
+                                                        value={
+                                                            downloadForm.data
+                                                                .email
+                                                        }
+                                                        onChange={(e) =>
+                                                            downloadForm.setData(
+                                                                'email',
+                                                                e.target.value,
+                                                            )
+                                                        }
                                                         placeholder="you@example.com"
                                                         className="h-12 flex-1 border-[#e3e3e0] bg-white text-base dark:border-[#3E3E3A] dark:bg-[#161615]"
-                                                        disabled={downloadForm.processing}
+                                                        disabled={
+                                                            downloadForm.processing
+                                                        }
                                                     />
                                                     <Button
                                                         type="submit"
-                                                        disabled={downloadForm.processing}
+                                                        disabled={
+                                                            downloadForm.processing
+                                                        }
                                                         className="h-12 px-6 text-base"
                                                     >
                                                         <Download className="size-5" />
@@ -212,7 +269,12 @@ export default function Home({ launched }: Props) {
                                                     </Button>
                                                 </div>
                                                 {downloadForm.errors.email && (
-                                                    <p className="mt-2 text-sm text-red-500">{downloadForm.errors.email}</p>
+                                                    <p className="mt-2 text-sm text-red-500">
+                                                        {
+                                                            downloadForm.errors
+                                                                .email
+                                                        }
+                                                    </p>
                                                 )}
                                                 <p className="mt-3 text-sm text-[#a1a09a] dark:text-[#706f6c]">
                                                     Requires macOS 14.6+
@@ -222,30 +284,50 @@ export default function Home({ launched }: Props) {
                                     </div>
                                 ) : (
                                     <div>
-                                        <form onSubmit={submitWaitlist} className="max-w-md lg:mx-0">
+                                        <form
+                                            onSubmit={submitWaitlist}
+                                            className="max-w-md lg:mx-0"
+                                        >
                                             <div className="flex gap-2">
                                                 <Input
                                                     type="email"
-                                                    value={waitlistForm.data.email}
-                                                    onChange={(e) => waitlistForm.setData('email', e.target.value)}
+                                                    value={
+                                                        waitlistForm.data.email
+                                                    }
+                                                    onChange={(e) =>
+                                                        waitlistForm.setData(
+                                                            'email',
+                                                            e.target.value,
+                                                        )
+                                                    }
                                                     placeholder="you@example.com"
                                                     className="h-12 flex-1 border-[#e3e3e0] bg-white text-base dark:border-[#3E3E3A] dark:bg-[#161615]"
-                                                    disabled={waitlistForm.processing || subscribed}
+                                                    disabled={
+                                                        waitlistForm.processing ||
+                                                        subscribed
+                                                    }
                                                 />
                                                 <Button
                                                     type="submit"
-                                                    disabled={waitlistForm.processing || subscribed}
+                                                    disabled={
+                                                        waitlistForm.processing ||
+                                                        subscribed
+                                                    }
                                                     className="h-12 px-6 text-base"
                                                 >
-                                                    {subscribed ? 'Added!' : 'Join Waitlist'}
+                                                    {subscribed
+                                                        ? 'Added!'
+                                                        : 'Join Waitlist'}
                                                 </Button>
                                             </div>
                                             {waitlistForm.errors.email && (
-                                                <p className="mt-2 text-sm text-red-500">{waitlistForm.errors.email}</p>
+                                                <p className="mt-2 text-sm text-red-500">
+                                                    {waitlistForm.errors.email}
+                                                </p>
                                             )}
                                         </form>
                                         {subscribed && (
-                                            <div className="mt-6 max-w-md rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center dark:border-emerald-800 dark:bg-emerald-950/50 lg:mx-0">
+                                            <div className="mt-6 max-w-md rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center lg:mx-0 dark:border-emerald-800 dark:bg-emerald-950/50">
                                                 <div className="mb-3 flex items-center justify-center gap-3">
                                                     <div className="flex size-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900">
                                                         <CheckCircle className="size-5 text-emerald-600 dark:text-emerald-400" />
@@ -255,13 +337,13 @@ export default function Home({ launched }: Props) {
                                                     You're on the list!
                                                 </p>
                                                 <p className="mt-1 text-sm text-emerald-700 dark:text-emerald-300">
-                                                    We'll email you when MCP Contxt is ready to download.
+                                                    We'll email you when MCP
+                                                    Contxt is ready to download.
                                                 </p>
                                             </div>
                                         )}
                                     </div>
                                 )}
-
                             </div>
 
                             {/* Screenshot */}
@@ -283,27 +365,41 @@ export default function Home({ launched }: Props) {
                     {/* Gradient border bottom */}
                     <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#DD2C25]/40 to-transparent" />
                     <div className="mx-auto max-w-6xl px-6 text-center">
-                        <h2 className="mb-3 text-2xl font-semibold">Works with 100+ MCP servers</h2>
+                        <h2 className="mb-3 text-2xl font-semibold">
+                            Works with 100+ MCP servers
+                        </h2>
                         <p className="mb-12 text-[#706f6c] dark:text-[#A1A09A]">
                             Including popular services you already use
                         </p>
 
                         <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14">
                             {featuredServers.map((server) => (
-                                <div key={server.name} className="flex flex-col items-center gap-3">
+                                <div
+                                    key={server.name}
+                                    className="flex flex-col items-center gap-3"
+                                >
                                     <img
-                                        src={appearance === 'dark' && server.darkIcon ? server.darkIcon : server.icon}
+                                        src={
+                                            appearance === 'dark' &&
+                                            server.darkIcon
+                                                ? server.darkIcon
+                                                : server.icon
+                                        }
                                         alt={server.name}
                                         className="size-12"
                                     />
-                                    <span className="text-sm text-[#706f6c] dark:text-[#A1A09A]">{server.name}</span>
+                                    <span className="text-sm text-[#706f6c] dark:text-[#A1A09A]">
+                                        {server.name}
+                                    </span>
                                 </div>
                             ))}
                             <div className="flex flex-col items-center gap-3">
                                 <span className="flex size-12 items-center justify-center text-lg font-semibold text-[#DD2C25]">
                                     +95
                                 </span>
-                                <span className="text-sm text-[#706f6c] dark:text-[#A1A09A]">more</span>
+                                <span className="text-sm text-[#706f6c] dark:text-[#A1A09A]">
+                                    more
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -332,7 +428,9 @@ export default function Home({ launched }: Props) {
 
                                 {/* Text */}
                                 <div className="w-full lg:w-1/2">
-                                    <h2 className="mb-4 text-3xl font-semibold">{feature.title}</h2>
+                                    <h2 className="mb-4 text-3xl font-semibold">
+                                        {feature.title}
+                                    </h2>
                                     <p className="text-lg leading-relaxed text-[#706f6c] dark:text-[#A1A09A]">
                                         {feature.description}
                                     </p>
@@ -347,10 +445,12 @@ export default function Home({ launched }: Props) {
                     {/* Gradient border top */}
                     <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#DD2C25]/40 to-transparent" />
                     <div className="mx-auto max-w-6xl px-6 text-center">
-                        <h2 className="mb-4 text-3xl font-semibold">Ready to simplify your workflow?</h2>
+                        <h2 className="mb-4 text-3xl font-semibold">
+                            Ready to simplify your workflow?
+                        </h2>
                         <p className="mb-8 text-lg text-[#706f6c] dark:text-[#A1A09A]">
                             {launched
-                                ? 'Enter your email and we\'ll send you the download link.'
+                                ? "Enter your email and we'll send you the download link."
                                 : 'Join the waitlist to be notified when MCP Contxt launches.'}
                         </p>
 
@@ -366,16 +466,25 @@ export default function Home({ launched }: Props) {
                                         Check your email!
                                     </p>
                                     <p className="mt-1 text-sm text-emerald-700 dark:text-emerald-300">
-                                        We've sent you a download link. The link expires in 24 hours.
+                                        We've sent you a download link. The link
+                                        expires in 24 hours.
                                     </p>
                                 </div>
                             ) : (
-                                <form onSubmit={submitDownloadRequest} className="mx-auto max-w-md">
+                                <form
+                                    onSubmit={submitDownloadRequest}
+                                    className="mx-auto max-w-md"
+                                >
                                     <div className="flex gap-2">
                                         <Input
                                             type="email"
                                             value={downloadForm.data.email}
-                                            onChange={(e) => downloadForm.setData('email', e.target.value)}
+                                            onChange={(e) =>
+                                                downloadForm.setData(
+                                                    'email',
+                                                    e.target.value,
+                                                )
+                                            }
                                             placeholder="you@example.com"
                                             className="h-12 flex-1 border-[#e3e3e0] bg-white text-base dark:border-[#3E3E3A] dark:bg-[#161615]"
                                             disabled={downloadForm.processing}
@@ -390,27 +499,45 @@ export default function Home({ launched }: Props) {
                                         </Button>
                                     </div>
                                     {downloadForm.errors.email && (
-                                        <p className="mt-2 text-sm text-red-500">{downloadForm.errors.email}</p>
+                                        <p className="mt-2 text-sm text-red-500">
+                                            {downloadForm.errors.email}
+                                        </p>
                                     )}
                                 </form>
                             )
                         ) : (
-                            <form onSubmit={submitWaitlist} className="mx-auto max-w-md">
+                            <form
+                                onSubmit={submitWaitlist}
+                                className="mx-auto max-w-md"
+                            >
                                 <div className="flex gap-2">
                                     <Input
                                         type="email"
                                         value={waitlistForm.data.email}
-                                        onChange={(e) => waitlistForm.setData('email', e.target.value)}
+                                        onChange={(e) =>
+                                            waitlistForm.setData(
+                                                'email',
+                                                e.target.value,
+                                            )
+                                        }
                                         placeholder="you@example.com"
                                         className="h-12 flex-1 border-[#e3e3e0] bg-white text-base dark:border-[#3E3E3A] dark:bg-[#161615]"
-                                        disabled={waitlistForm.processing || subscribed}
+                                        disabled={
+                                            waitlistForm.processing ||
+                                            subscribed
+                                        }
                                     />
                                     <Button
                                         type="submit"
-                                        disabled={waitlistForm.processing || subscribed}
+                                        disabled={
+                                            waitlistForm.processing ||
+                                            subscribed
+                                        }
                                         className="h-12 px-6 text-base"
                                     >
-                                        {subscribed ? 'Added!' : 'Join Waitlist'}
+                                        {subscribed
+                                            ? 'Added!'
+                                            : 'Join Waitlist'}
                                     </Button>
                                 </div>
                             </form>
@@ -424,10 +551,16 @@ export default function Home({ launched }: Props) {
                     <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#DD2C25]/40 to-transparent" />
                     <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-[#706f6c] sm:flex-row dark:text-[#A1A09A]">
                         <div className="flex items-center gap-2">
-                            <img src="/images/app-icon.png" alt="MCP Contxt" className="size-6 rounded" />
+                            <img
+                                src="/images/app-icon.png"
+                                alt="MCP Contxt"
+                                className="size-6 rounded"
+                            />
                             <span>MCP Contxt</span>
                         </div>
-                        <span>(C) 2026 OpcodeZero</span>
+                        <span>
+                            &copy; {new Date().getFullYear()} OpcodeZero
+                        </span>
                     </div>
                 </footer>
             </div>
