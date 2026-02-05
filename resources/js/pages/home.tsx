@@ -558,9 +558,6 @@ export default function Home({ launched }: Props) {
                             />
                             <span>MCP Contxt</span>
                         </div>
-                        <span>
-                            &copy; {new Date().getFullYear()} OpcodeZero
-                        </span>
                     </div>
                 </footer>
             </div>
