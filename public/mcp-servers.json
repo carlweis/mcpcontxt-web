@@ -1,693 +1,1395 @@
 {
-    "version": "1.1.0",
-    "updated_at": "2026-02-01",
-    "servers": [
-        {
-            "id": "ahrefs",
-            "name": "Ahrefs",
-            "description": "SEO & AI search analytics",
-            "url": "https://api.ahrefs.com/mcp/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "aiera",
-            "name": "Aiera",
-            "description": "Live events, filings, company publications, and more",
-            "url": "https://mcp-pub.aiera.com/",
-            "transport": "http"
-        },
-        {
-            "id": "airops",
-            "name": "AirOps",
-            "description": "Craft content that wins AI search",
-            "url": "https://app.airops.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "amplitude",
-            "name": "Amplitude",
-            "description": "Search, access, and get insights on your Amplitude data",
-            "url": "https://mcp.amplitude.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "asana",
-            "name": "Asana",
-            "description": "Connect to Asana to coordinate tasks, projects, and goals",
-            "url": "https://mcp.asana.com/v2/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "atlassian",
-            "name": "Atlassian",
-            "description": "Access Jira & Confluence from Claude",
-            "url": "https://mcp.atlassian.com/v1/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "aura",
-            "name": "Aura",
-            "description": "Company intelligence & workforce analytics",
-            "url": "https://mcp.auraintelligence.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "aws-marketplace",
-            "name": "AWS Marketplace",
-            "description": "Discover, evaluate, and buy solutions for the cloud",
-            "url": "https://marketplace-mcp.us-east-1.api.aws/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "biorender",
-            "name": "BioRender",
-            "description": "Search for and use scientific templates and icons",
-            "url": "https://mcp.services.biorender.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "biorxiv",
-            "name": "bioRxiv",
-            "description": "Access bioRxiv and medRxiv preprint data",
-            "url": "https://mcp.deepsense.ai/biorxiv/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "bitly",
-            "name": "Bitly",
-            "description": "Shorten links, generate QR Codes, and track performance",
-            "url": "https://api-ssl.bitly.com/v4/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "blockscout",
-            "name": "Blockscout",
-            "description": "Access and analyze blockchain data",
-            "url": "https://mcp.blockscout.com/mcp/",
-            "transport": "http"
-        },
-        {
-            "id": "box",
-            "name": "Box",
-            "description": "Search, access and get insights on your Box content",
-            "url": "https://mcp.box.com",
-            "transport": "http"
-        },
-        {
-            "id": "canva",
-            "name": "Canva",
-            "description": "Search, create, autofill, and export Canva designs",
-            "url": "https://mcp.canva.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "cdata-connect-ai",
-            "name": "CData Connect AI",
-            "description": "Managed MCP platform for 350 sources",
-            "url": "https://mcp.cloud.cdata.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "chembl",
-            "name": "ChEMBL",
-            "description": "Access the ChEMBL Database",
-            "url": "https://mcp.deepsense.ai/chembl/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "circleback",
-            "name": "Circleback",
-            "description": "Search and access context from meetings",
-            "url": "https://app.circleback.ai/api/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "clay",
-            "name": "Clay",
-            "description": "Find prospects. Research accounts. Personalize outreach",
-            "url": "https://api.clay.com/v3/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "clickup",
-            "name": "ClickUp",
-            "description": "Project management & collaboration for teams & agents",
-            "url": "https://mcp.clickup.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "clinical-trials",
-            "name": "Clinical Trials",
-            "description": "Access ClinicalTrials.gov data",
-            "url": "https://mcp.deepsense.ai/clinical_trials/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "clockwise",
-            "name": "Clockwise",
-            "description": "Advanced scheduling and time management for work",
-            "url": "https://mcp.getclockwise.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "close",
-            "name": "Close",
-            "description": "Connect Claude to Close CRM to access and act on your sales data",
-            "url": "https://mcp.close.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "cloudflare",
-            "name": "Cloudflare",
-            "description": "Build applications with compute, storage, and AI",
-            "url": "https://bindings.mcp.cloudflare.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "cms-coverage",
-            "name": "CMS Coverage",
-            "description": "Access the CMS Coverage Database",
-            "url": "https://mcp.deepsense.ai/cms_coverage/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "crossbeam",
-            "name": "Crossbeam",
-            "description": "Explore partner data and ecosystem insights in Claude",
-            "url": "https://mcp.crossbeam.com",
-            "transport": "http"
-        },
-        {
-            "id": "crypto-com",
-            "name": "Crypto.com",
-            "description": "Real time prices, orders, charts, and more for crypto",
-            "url": "https://mcp.crypto.com/market-data/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "daloopa",
-            "name": "Daloopa",
-            "description": "Financial fundamental data and KPIs with hyperlinks",
-            "url": "https://mcp.daloopa.com/server/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "day-ai",
-            "name": "Day AI",
-            "description": "Analyze & update CRM records",
-            "url": "https://day.ai/api/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "devrev",
-            "name": "DevRev",
-            "description": "Search and update your company's knowledge graph",
-            "url": "https://api.devrev.ai/mcp/v1",
-            "transport": "http"
-        },
-        {
-            "id": "egnyte",
-            "name": "Egnyte",
-            "description": "Securely access and analyze Egnyte content",
-            "url": "https://mcp-server.egnyte.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "fellow",
-            "name": "Fellow.ai",
-            "description": "Chat with your meetings to uncover actionable insights",
-            "url": "https://fellow.app/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "figma",
-            "name": "Figma",
-            "description": "Generate diagrams and better code from Figma context",
-            "url": "https://mcp.figma.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "fireflies",
-            "name": "Fireflies",
-            "description": "Analyze and generate insights from meeting transcripts",
-            "url": "https://api.fireflies.ai/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "gamma",
-            "name": "Gamma",
-            "description": "Create presentations, docs, socials, and sites with AI",
-            "url": "https://mcp.gamma.app/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "godaddy",
-            "name": "GoDaddy",
-            "description": "Search domains and check availability",
-            "url": "https://api.godaddy.com/v1/domains/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "bigquery",
-            "name": "Google Cloud BigQuery",
-            "description": "BigQuery: Advanced analytical insights for agents",
-            "url": "https://bigquery.googleapis.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "guru",
-            "name": "Guru",
-            "description": "Search and interact with your company knowledge",
-            "url": "https://mcp.api.getguru.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "harmonic",
-            "name": "Harmonic",
-            "description": "Discover, research, and enrich companies and people",
-            "url": "https://mcp.api.harmonic.ai",
-            "transport": "http"
-        },
-        {
-            "id": "hubspot",
-            "name": "HubSpot",
-            "description": "Chat with your CRM data to get personalized insights",
-            "url": "https://mcp.hubspot.com/anthropic",
-            "transport": "http"
-        },
-        {
-            "id": "huggingface",
-            "name": "Hugging Face",
-            "description": "Access the Hugging Face Hub and thousands of Gradio Apps",
-            "url": "https://huggingface.co/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "icd-10-codes",
-            "name": "ICD-10 Codes",
-            "description": "Access ICD-10-CM and ICD-10-PCS code sets",
-            "url": "https://mcp.deepsense.ai/icd10_codes/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "indeed",
-            "name": "Indeed",
-            "description": "Search for jobs on Indeed",
-            "url": "https://mcp.indeed.com/claude/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "intercom",
-            "name": "Intercom",
-            "description": "Access to Intercom data for better customer insights",
-            "url": "https://mcp.intercom.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "jotform",
-            "name": "Jotform",
-            "description": "Create forms & analyze submissions inside Claude",
-            "url": "https://mcp.jotform.com/",
-            "transport": "http"
-        },
-        {
-            "id": "kiwi",
-            "name": "Kiwi.com",
-            "description": "Search flights in Claude",
-            "url": "https://mcp.kiwi.com",
-            "transport": "http"
-        },
-        {
-            "id": "klaviyo",
-            "name": "Klaviyo",
-            "description": "Report, strategize & create with real-time Klaviyo data",
-            "url": "https://mcp.klaviyo.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "lastminute",
-            "name": "lastminute.com",
-            "description": "Search, compare and book flights across global airlines",
-            "url": "https://mcp.lastminute.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "lilt",
-            "name": "LILT",
-            "description": "High-quality translation with human verification",
-            "url": "https://mcp.lilt.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "linear",
-            "name": "Linear",
-            "description": "Manage issues, projects & team workflows in Linear",
-            "url": "https://mcp.linear.app/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "lseg",
-            "name": "LSEG",
-            "description": "Access data & analytics across asset classes",
-            "url": "https://api.analytics.lseg.com/lfa/mcp/server-cl",
-            "transport": "http"
-        },
-        {
-            "id": "lunarcrush",
-            "name": "LunarCrush",
-            "description": "Add real-time social media data to your searches",
-            "url": "https://lunarcrush.ai/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "make",
-            "name": "Make",
-            "description": "Run Make scenarios and manage your Make account",
-            "url": "https://mcp.make.com",
-            "transport": "http"
-        },
-        {
-            "id": "medidata",
-            "name": "Medidata",
-            "description": "Clinical trial software and site ranking tools",
-            "url": "https://mcp.imedidata.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "melon",
-            "name": "Melon",
-            "description": "Browse music charts & your personalized music picks",
-            "url": "https://mcp.melon.com/mcp/",
-            "transport": "http"
-        },
-        {
-            "id": "mercury",
-            "name": "Mercury",
-            "description": "Search, analyze and understand your finances on Mercury",
-            "url": "https://mcp.mercury.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "mermaid",
-            "name": "Mermaid Chart",
-            "description": "Validates & renders Mermaid diagrams as PNG images",
-            "url": "https://mcp.mermaidchart.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "monday",
-            "name": "monday.com",
-            "description": "Manage projects, boards, and workflows in monday.com",
-            "url": "https://mcp.monday.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "moodys",
-            "name": "Moody's",
-            "description": "Risk insights, analytics, and decision intelligence",
-            "url": "https://api.moodys.com/genai-ready-data/m1/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "morningstar",
-            "name": "Morningstar",
-            "description": "Up-to-date investment and market insights",
-            "url": "https://mcp.morningstar.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "motherduck",
-            "name": "MotherDuck",
-            "description": "Analyze your data with natural language",
-            "url": "https://api.motherduck.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "mt-newswires",
-            "name": "MT Newswires",
-            "description": "Trusted real-time global financial news provider",
-            "url": "https://vast-mcp.blueskyapi.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "netlify",
-            "name": "Netlify",
-            "description": "Create, deploy, manage, and secure websites on Netlify",
-            "url": "https://netlify-mcp.netlify.app/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "notion",
-            "name": "Notion",
-            "description": "Connect your Notion workspace to search and update",
-            "url": "https://mcp.notion.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "npi-registry",
-            "name": "NPI Registry",
-            "description": "Access US National Provider Identifier (NPI) Registry",
-            "url": "https://mcp.deepsense.ai/npi_registry/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "owkin",
-            "name": "Owkin",
-            "description": "Interact with AI agents built for biology",
-            "url": "https://mcp.k.owkin.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "paypal",
-            "name": "PayPal",
-            "description": "Access PayPal payments platform",
-            "url": "https://mcp.paypal.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "pitchbook",
-            "name": "PitchBook Premium",
-            "description": "PitchBook data, embedded in the way you work",
-            "url": "https://premium.mcp.pitchbook.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "playmcp",
-            "name": "PlayMCP",
-            "description": "Connect and use PlayMCP servers in your toolbox",
-            "url": "https://playmcp.kakao.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "pubmed",
-            "name": "PubMed",
-            "description": "Search biomedical literature from PubMed",
-            "url": "https://pubmed.mcp.claude.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "ramp",
-            "name": "Ramp",
-            "description": "Search, access, and analyze your Ramp financial data",
-            "url": "https://ramp-mcp-remote.ramp.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "sp-global",
-            "name": "S&P Global",
-            "description": "Query a range of S&P Global datasets",
-            "url": "https://kfinance.kensho.com/integrations/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "scholar-gateway",
-            "name": "Scholar Gateway",
-            "description": "Enhance responses with scholarly research and citations",
-            "url": "https://connector.scholargateway.ai/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "sentry",
-            "name": "Sentry",
-            "description": "Monitor errors and debug production issues",
-            "url": "https://mcp.sentry.dev/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "similarweb",
-            "name": "Similarweb",
-            "description": "Real time web, mobile app, and market data",
-            "url": "https://mcp.similarweb.com",
-            "transport": "http"
-        },
-        {
-            "id": "slack",
-            "name": "Slack",
-            "description": "Send messages, create canvases, and fetch Slack data",
-            "url": "https://mcp.slack.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "smartsheet",
-            "name": "Smartsheet",
-            "description": "Analyze and manage Smartsheet data with Claude",
-            "url": "https://mcp.smartsheet.com",
-            "transport": "http"
-        },
-        {
-            "id": "stripe",
-            "name": "Stripe",
-            "description": "Payment processing and financial infrastructure tools",
-            "url": "https://mcp.stripe.com",
-            "transport": "http"
-        },
-        {
-            "id": "supabase",
-            "name": "Supabase",
-            "description": "Manage databases, authentication, and storage",
-            "url": "https://mcp.supabase.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "ticket-tailor",
-            "name": "Ticket Tailor",
-            "description": "Event platform for managing tickets, orders & more",
-            "url": "https://mcp.tickettailor.ai/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "trivago",
-            "name": "Trivago",
-            "description": "Find your ideal hotel at the best price",
-            "url": "https://mcp.trivago.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "udemy",
-            "name": "Udemy Business",
-            "description": "Search and explore skill-building resources",
-            "url": "https://api.udemy.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "vercel",
-            "name": "Vercel",
-            "description": "Analyze, debug, and manage projects and deployments",
-            "url": "https://mcp.vercel.com/",
-            "transport": "http"
-        },
-        {
-            "id": "vibe-prospecting",
-            "name": "Vibe Prospecting",
-            "description": "Find company & contact data",
-            "url": "https://vibeprospecting.explorium.ai/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "webflow",
-            "name": "Webflow",
-            "description": "Manage Webflow CMS, pages, assets and sites",
-            "url": "https://mcp.webflow.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "windsor",
-            "name": "Windsor.ai",
-            "description": "Connect 325+ marketing, analytics and CRM data sources",
-            "url": "https://mcp.windsor.ai",
-            "transport": "http"
-        },
-        {
-            "id": "wix",
-            "name": "Wix",
-            "description": "Manage and build sites and apps on Wix",
-            "url": "https://mcp.wix.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "wordpress",
-            "name": "WordPress.com",
-            "description": "Secure AI access to manage your WordPress.com sites",
-            "url": "https://public-api.wordpress.com/wpcom/v2/mcp/v1",
-            "transport": "http"
-        },
-        {
-            "id": "wyndham",
-            "name": "Wyndham Hotels",
-            "description": "Discover the right Wyndham Hotel for you, faster",
-            "url": "https://mcp.wyndhamhotels.com/claude/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "zoominfo",
-            "name": "ZoomInfo",
-            "description": "Enrich contacts & accounts with GTM intelligence",
-            "url": "https://mcp.zoominfo.com/mcp",
-            "transport": "http"
-        },
-        {
-            "id": "github-official",
-            "name": "GitHub (Official)",
-            "description": "Access GitHub repositories, issues, pull requests, and code search",
-            "transport": "stdio",
-            "command": "npx",
-            "args": ["-y", "@modelcontextprotocol/server-github"],
-            "env": ["GITHUB_PERSONAL_ACCESS_TOKEN"],
-            "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/github"
-        },
-        {
-            "id": "salesforce",
-            "name": "Salesforce",
-            "description": "Query data, manage metadata, execute Apex, and automate Salesforce development",
-            "transport": "stdio",
-            "command": "npx",
-            "args": ["-y", "@salesforce/mcp"],
-            "env": [],
-            "setupUrl": "https://github.com/salesforcecli/mcp"
-        },
-        {
-            "id": "zendesk",
-            "name": "Zendesk",
-            "description": "Access help center articles, analyze tickets, and draft responses",
-            "transport": "stdio",
-            "command": "uvx",
-            "args": ["zendesk-mcp-server"],
-            "env": ["ZENDESK_SUBDOMAIN", "ZENDESK_EMAIL", "ZENDESK_API_KEY"],
-            "setupUrl": "https://github.com/reminia/zendesk-mcp-server"
-        },
-        {
-            "id": "google-workspace",
-            "name": "Google Workspace",
-            "description": "Access Gmail, Drive, Calendar, Docs, Sheets, and more",
-            "transport": "stdio",
-            "command": "uvx",
-            "args": ["workspace-mcp"],
-            "env": ["GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET"],
-            "setupUrl": "https://github.com/taylorwilsdon/google_workspace_mcp"
-        },
-        {
-            "id": "postgres",
-            "name": "PostgreSQL",
-            "description": "Read-only database access with schema inspection",
-            "transport": "stdio",
-            "command": "npx",
-            "args": ["-y", "@modelcontextprotocol/server-postgres"],
-            "env": ["POSTGRES_CONNECTION_STRING"],
-            "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres"
-        },
-        {
-            "id": "filesystem",
-            "name": "Filesystem",
-            "description": "Secure file operations with configurable access controls",
-            "transport": "stdio",
-            "command": "npx",
-            "args": [
-                "-y",
-                "@modelcontextprotocol/server-filesystem",
-                "/path/to/allowed/directory"
-            ],
-            "env": [],
-            "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem"
+  "version": "2.0.0",
+  "updated_at": "2026-02-05",
+  "description": "Curated list of the top 100 most popular MCP servers by usage and popularity",
+  "servers": [
+    {
+      "id": "slack",
+      "name": "Slack",
+      "description": "Send messages, create canvases, search channels, and manage Slack workflows",
+      "category": "productivity",
+      "transport": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://mcp.slack.com"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "description": "Connect your Notion workspace to search, create, and update pages and databases",
+      "category": "productivity",
+      "transport": "http",
+      "url": "https://mcp.notion.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://github.com/makenotion/notion-mcp-server"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "description": "Access repositories, issues, pull requests, code search, and GitHub workflows",
+      "category": "development",
+      "transport": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://github.com/github/github-mcp-server",
+      "alternatives": [
+        {
+          "name": "GitHub (stdio)",
+          "transport": "stdio",
+          "command": "npx",
+          "args": ["-y", "@modelcontextprotocol/server-github"],
+          "env": ["GITHUB_PERSONAL_ACCESS_TOKEN"]
         }
-    ]
+      ]
+    },
+    {
+      "id": "linear",
+      "name": "Linear",
+      "description": "Manage issues, projects, cycles, and team workflows in Linear",
+      "category": "project-management",
+      "transport": "http",
+      "url": "https://mcp.linear.app/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://linear.app/docs/mcp"
+    },
+    {
+      "id": "sentry",
+      "name": "Sentry",
+      "description": "Monitor errors, debug production issues, and analyze performance data",
+      "category": "development",
+      "transport": "http",
+      "url": "https://mcp.sentry.dev/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://docs.sentry.io/product/integrations/mcp/"
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "description": "Payment processing — manage products, customers, invoices, subscriptions, and balances",
+      "category": "payments",
+      "transport": "http",
+      "url": "https://mcp.stripe.com",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://docs.stripe.com/mcp"
+    },
+    {
+      "id": "paypal",
+      "name": "PayPal",
+      "description": "Access PayPal payments platform for transactions and account management",
+      "category": "payments",
+      "transport": "http",
+      "url": "https://mcp.paypal.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developer.paypal.com"
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "description": "Query data, manage metadata, execute Apex, and automate Salesforce development",
+      "category": "crm",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@salesforce/mcp"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://github.com/salesforcecli/mcp"
+    },
+    {
+      "id": "zapier",
+      "name": "Zapier",
+      "description": "Connect AI to 8,000+ apps with 30,000+ actions — automation without custom integrations",
+      "category": "automation",
+      "transport": "http",
+      "url": "https://actions.zapier.com/mcp/{server_id}/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://zapier.com/mcp",
+      "notes": "Requires Zapier account. Create server at zapier.com/mcp, then use the generated URL. Each tool call costs 2 Zapier tasks."
+    },
+    {
+      "id": "godaddy",
+      "name": "GoDaddy",
+      "description": "Search domains and check availability",
+      "category": "domains",
+      "transport": "http",
+      "url": "https://api.godaddy.com/v1/domains/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developer.godaddy.com"
+    },
+    {
+      "id": "zendesk",
+      "name": "Zendesk",
+      "description": "Access help center articles, analyze tickets, and draft responses",
+      "category": "support",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["zendesk-mcp-server"],
+      "env": ["ZENDESK_SUBDOMAIN", "ZENDESK_EMAIL", "ZENDESK_API_KEY"],
+      "official": false,
+      "setupUrl": "https://github.com/reminia/zendesk-mcp-server"
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "description": "Generate diagrams and better code from Figma design context",
+      "category": "design",
+      "transport": "http",
+      "url": "https://mcp.figma.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://mcp.figma.com"
+    },
+    {
+      "id": "atlassian",
+      "name": "Atlassian (Jira & Confluence)",
+      "description": "Access Jira issues, Confluence pages, and manage Atlassian Cloud workflows",
+      "category": "project-management",
+      "transport": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developer.atlassian.com",
+      "alternatives": [
+        {
+          "name": "Atlassian (Community)",
+          "transport": "stdio",
+          "command": "uvx",
+          "args": ["mcp-atlassian"],
+          "setupUrl": "https://github.com/sooperset/mcp-atlassian",
+          "notes": "Community server supporting Confluence Cloud, Jira Cloud, and Jira Server/Data Center"
+        }
+      ]
+    },
+    {
+      "id": "asana",
+      "name": "Asana",
+      "description": "Coordinate tasks, projects, and goals in Asana",
+      "category": "project-management",
+      "transport": "http",
+      "url": "https://mcp.asana.com/v2/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developers.asana.com"
+    },
+    {
+      "id": "hubspot",
+      "name": "HubSpot",
+      "description": "Chat with your CRM data — read-only access to contacts, deals, and tickets",
+      "category": "crm",
+      "transport": "http",
+      "url": "https://mcp.hubspot.com/anthropic",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developers.hubspot.com"
+    },
+    {
+      "id": "google-workspace",
+      "name": "Google Workspace",
+      "description": "Access Gmail, Drive, Calendar, Docs, Sheets, and more",
+      "category": "productivity",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["workspace-mcp"],
+      "env": ["GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET"],
+      "official": false,
+      "setupUrl": "https://github.com/taylorwilsdon/google_workspace_mcp"
+    },
+    {
+      "id": "postgres",
+      "name": "PostgreSQL",
+      "description": "Read-only database access with schema inspection and natural language queries",
+      "category": "databases",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": ["POSTGRES_CONNECTION_STRING"],
+      "official": true,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres"
+    },
+    {
+      "id": "filesystem",
+      "name": "Filesystem",
+      "description": "Secure file operations with configurable access controls",
+      "category": "utilities",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/directory"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem"
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "description": "Build and manage Workers, KV, R2, D1, DNS, and security rules",
+      "category": "cloud",
+      "transport": "http",
+      "url": "https://bindings.mcp.cloudflare.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://github.com/cloudflare/mcp-server-cloudflare"
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "description": "Analyze, debug, and manage projects and deployments on Vercel",
+      "category": "cloud",
+      "transport": "http",
+      "url": "https://mcp.vercel.com/",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://vercel.com/docs"
+    },
+    {
+      "id": "netlify",
+      "name": "Netlify",
+      "description": "Create, deploy, manage, and secure websites on Netlify",
+      "category": "cloud",
+      "transport": "http",
+      "url": "https://netlify-mcp.netlify.app/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://docs.netlify.com"
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase",
+      "description": "Manage databases, authentication, storage, and edge functions",
+      "category": "databases",
+      "transport": "http",
+      "url": "https://mcp.supabase.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://supabase.com/docs"
+    },
+    {
+      "id": "playwright",
+      "name": "Playwright (Microsoft)",
+      "description": "Browser automation via structured accessibility data for testing and scraping",
+      "category": "browser-automation",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://github.com/microsoft/playwright-mcp",
+      "notes": "Official Microsoft Playwright MCP server. 26K+ GitHub stars."
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "description": "Run operations in isolated containers for secure code execution and testing",
+      "category": "development",
+      "transport": "stdio",
+      "command": "docker",
+      "args": ["mcp", "server"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://docs.docker.com/ai/mcp-catalog-and-toolkit/",
+      "notes": "Requires Docker Desktop with MCP Toolkit enabled"
+    },
+    {
+      "id": "aws",
+      "name": "AWS",
+      "description": "Manage EC2, S3, IAM, CloudWatch, and other AWS services with best practices",
+      "category": "cloud",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["awslabs.core-mcp-server@latest"],
+      "env": ["AWS_PROFILE"],
+      "official": true,
+      "setupUrl": "https://github.com/awslabs/mcp",
+      "notes": "Collection of specialized MCP servers for different AWS services"
+    },
+    {
+      "id": "clickup",
+      "name": "ClickUp",
+      "description": "Project management and collaboration for teams and agents",
+      "category": "project-management",
+      "transport": "http",
+      "url": "https://mcp.clickup.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://clickup.com"
+    },
+    {
+      "id": "monday",
+      "name": "monday.com",
+      "description": "Manage projects, boards, and workflows in monday.com",
+      "category": "project-management",
+      "transport": "http",
+      "url": "https://mcp.monday.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developer.monday.com"
+    },
+    {
+      "id": "intercom",
+      "name": "Intercom",
+      "description": "Access Intercom data for customer insights, conversations, and support",
+      "category": "support",
+      "transport": "http",
+      "url": "https://mcp.intercom.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developers.intercom.com"
+    },
+    {
+      "id": "canva",
+      "name": "Canva",
+      "description": "Search, create, autofill, and export Canva designs",
+      "category": "design",
+      "transport": "http",
+      "url": "https://mcp.canva.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.canva.dev"
+    },
+    {
+      "id": "box",
+      "name": "Box",
+      "description": "Search, access, and get insights on your Box content",
+      "category": "storage",
+      "transport": "http",
+      "url": "https://mcp.box.com",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developer.box.com"
+    },
+    {
+      "id": "amplitude",
+      "name": "Amplitude",
+      "description": "Search, access, and get insights on your Amplitude analytics data",
+      "category": "analytics",
+      "transport": "http",
+      "url": "https://mcp.amplitude.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://amplitude.com"
+    },
+    {
+      "id": "brave-search",
+      "name": "Brave Search",
+      "description": "Privacy-focused web and local search via the Brave Search API",
+      "category": "search",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": ["BRAVE_API_KEY"],
+      "official": true,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search",
+      "notes": "Requires free API key from https://brave.com/search/api/"
+    },
+    {
+      "id": "fetch",
+      "name": "Fetch",
+      "description": "Web content fetching and conversion for efficient LLM usage",
+      "category": "utilities",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["mcp-server-fetch"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch"
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "description": "Read, search, and manipulate local Git repositories",
+      "category": "development",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["mcp-server-git"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/git"
+    },
+    {
+      "id": "memory",
+      "name": "Memory",
+      "description": "Knowledge graph-based persistent memory system for AI context",
+      "category": "utilities",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory"
+    },
+    {
+      "id": "sequential-thinking",
+      "name": "Sequential Thinking",
+      "description": "Dynamic and reflective problem-solving through structured thought sequences",
+      "category": "utilities",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequentialthinking"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking"
+    },
+    {
+      "id": "context7",
+      "name": "Context7",
+      "description": "Fetches up-to-date, version-specific library documentation for grounding LLM responses",
+      "category": "development",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://github.com/upstash/context7",
+      "notes": "Highly popular for solving LLM hallucination with current docs"
+    },
+    {
+      "id": "puppeteer",
+      "name": "Puppeteer",
+      "description": "Browser automation and web scraping using Puppeteer",
+      "category": "browser-automation",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer"
+    },
+    {
+      "id": "firecrawl",
+      "name": "Firecrawl",
+      "description": "Advanced web scraping, crawling, and content extraction",
+      "category": "browser-automation",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": ["FIRECRAWL_API_KEY"],
+      "official": true,
+      "setupUrl": "https://github.com/firecrawl/firecrawl-mcp-server",
+      "notes": "API key from https://firecrawl.dev"
+    },
+    {
+      "id": "sqlite",
+      "name": "SQLite",
+      "description": "Interact with SQLite databases — query, schema inspection, and data manipulation",
+      "category": "databases",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["mcp-server-sqlite", "--db-path", "/path/to/database.db"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite"
+    },
+    {
+      "id": "mysql",
+      "name": "MySQL",
+      "description": "Connect to MySQL databases for queries and schema inspection",
+      "category": "databases",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@benborla29/mcp-server-mysql"],
+      "env": ["MYSQL_HOST", "MYSQL_USER", "MYSQL_PASSWORD", "MYSQL_DATABASE"],
+      "official": false,
+      "setupUrl": "https://github.com/benborla/mcp-server-mysql"
+    },
+    {
+      "id": "bigquery",
+      "name": "Google Cloud BigQuery",
+      "description": "Advanced analytical insights from BigQuery datasets",
+      "category": "databases",
+      "transport": "http",
+      "url": "https://bigquery.googleapis.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://cloud.google.com/bigquery"
+    },
+    {
+      "id": "mongodb",
+      "name": "MongoDB",
+      "description": "Interact with MongoDB databases for document queries and management",
+      "category": "databases",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "mongodb-mcp-server"],
+      "env": ["MONGODB_URI"],
+      "official": true,
+      "setupUrl": "https://github.com/mongodb-js/mongodb-mcp-server"
+    },
+    {
+      "id": "redis",
+      "name": "Redis",
+      "description": "Interact with Redis for caching, pub/sub, and data structure operations",
+      "category": "databases",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-redis"],
+      "env": ["REDIS_URL"],
+      "official": false,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers"
+    },
+    {
+      "id": "airtable",
+      "name": "Airtable",
+      "description": "Access and manage Airtable bases, tables, and records",
+      "category": "databases",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "airtable-mcp-server"],
+      "env": ["AIRTABLE_API_KEY"],
+      "official": false,
+      "setupUrl": "https://github.com/domdomegg/airtable-mcp-server"
+    },
+    {
+      "id": "make",
+      "name": "Make",
+      "description": "Run Make scenarios and manage your Make automation account",
+      "category": "automation",
+      "transport": "http",
+      "url": "https://mcp.make.com",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.make.com"
+    },
+    {
+      "id": "n8n",
+      "name": "n8n",
+      "description": "Self-hosted workflow automation connecting AI to hundreds of services",
+      "category": "automation",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@nicholaspung/n8n-mcp-server"],
+      "env": ["N8N_API_URL", "N8N_API_KEY"],
+      "official": false,
+      "setupUrl": "https://github.com/nicholaspung/n8n-mcp-server",
+      "notes": "Requires a running n8n instance"
+    },
+    {
+      "id": "pipedream",
+      "name": "Pipedream",
+      "description": "Connect with 2,500 APIs with 8,000+ prebuilt tools",
+      "category": "automation",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@pipedream/mcp"],
+      "env": ["PIPEDREAM_API_KEY"],
+      "official": true,
+      "setupUrl": "https://github.com/PipedreamHQ/pipedream/tree/master/modelcontextprotocol"
+    },
+    {
+      "id": "discord",
+      "name": "Discord",
+      "description": "Discord API integration for messages, channels, and server management",
+      "category": "communication",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@klavis/discord-mcp"],
+      "env": ["DISCORD_BOT_TOKEN"],
+      "official": false,
+      "setupUrl": "https://github.com/Klavis-AI/klavis/tree/main/mcp_servers/discord"
+    },
+    {
+      "id": "whatsapp",
+      "name": "WhatsApp",
+      "description": "Access personal WhatsApp for messaging individuals and groups",
+      "category": "communication",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["whatsapp-mcp"],
+      "env": [],
+      "official": false,
+      "setupUrl": "https://github.com/lharries/whatsapp-mcp",
+      "notes": "5K+ GitHub stars. Uses personal WhatsApp, not Business API."
+    },
+    {
+      "id": "gmail",
+      "name": "Gmail",
+      "description": "Read, search, send, and manage emails in Gmail",
+      "category": "communication",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["gmail-mcp-server"],
+      "env": ["GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET"],
+      "official": false,
+      "setupUrl": "https://github.com/nicholasgcoles/gmail-mcp-server"
+    },
+    {
+      "id": "google-calendar",
+      "name": "Google Calendar",
+      "description": "Manage events, check availability, and schedule meetings",
+      "category": "productivity",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic/google-calendar-mcp"],
+      "env": ["GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET"],
+      "official": false,
+      "setupUrl": "https://github.com/nspilman/google-calendar-mcp"
+    },
+    {
+      "id": "google-drive",
+      "name": "Google Drive",
+      "description": "Access and manage files in Google Drive, Docs, Sheets, and Slides",
+      "category": "storage",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-gdrive"],
+      "env": ["GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET"],
+      "official": true,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive"
+    },
+    {
+      "id": "google-maps",
+      "name": "Google Maps",
+      "description": "Location services, geocoding, directions, and place search",
+      "category": "utilities",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-google-maps"],
+      "env": ["GOOGLE_MAPS_API_KEY"],
+      "official": true,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/google-maps"
+    },
+    {
+      "id": "twilio",
+      "name": "Twilio",
+      "description": "Send SMS, make calls, and manage Twilio communication services",
+      "category": "communication",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "twilio-mcp-server"],
+      "env": ["TWILIO_ACCOUNT_SID", "TWILIO_AUTH_TOKEN"],
+      "official": false,
+      "setupUrl": "https://github.com/twilio-labs/mcp"
+    },
+    {
+      "id": "shopify",
+      "name": "Shopify",
+      "description": "Manage Shopify stores — products, orders, customers, and inventory",
+      "category": "ecommerce",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@shopify/dev-mcp@latest"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://github.com/Shopify/dev-mcp"
+    },
+    {
+      "id": "woocommerce",
+      "name": "WooCommerce",
+      "description": "Manage WooCommerce stores, products, and orders via WordPress",
+      "category": "ecommerce",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "woocommerce-mcp-server"],
+      "env": ["WC_URL", "WC_CONSUMER_KEY", "WC_CONSUMER_SECRET"],
+      "official": false,
+      "setupUrl": "https://github.com/AiondaDotCom/woocommerce-mcp-server"
+    },
+    {
+      "id": "klaviyo",
+      "name": "Klaviyo",
+      "description": "Report, strategize, and create with real-time Klaviyo marketing data",
+      "category": "marketing",
+      "transport": "http",
+      "url": "https://mcp.klaviyo.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developers.klaviyo.com"
+    },
+    {
+      "id": "ahrefs",
+      "name": "Ahrefs",
+      "description": "SEO analytics — backlinks, rankings, keyword research, and competitor analysis",
+      "category": "marketing",
+      "transport": "http",
+      "url": "https://api.ahrefs.com/mcp/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://ahrefs.com"
+    },
+    {
+      "id": "wordpress",
+      "name": "WordPress.com",
+      "description": "Manage and build WordPress.com sites with AI",
+      "category": "cms",
+      "transport": "http",
+      "url": "https://public-api.wordpress.com/wpcom/v2/mcp/v1",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developer.wordpress.com"
+    },
+    {
+      "id": "webflow",
+      "name": "Webflow",
+      "description": "Manage Webflow CMS, pages, assets, and sites",
+      "category": "cms",
+      "transport": "http",
+      "url": "https://mcp.webflow.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developers.webflow.com"
+    },
+    {
+      "id": "wix",
+      "name": "Wix",
+      "description": "Manage and build sites and apps on Wix",
+      "category": "cms",
+      "transport": "http",
+      "url": "https://mcp.wix.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://dev.wix.com"
+    },
+    {
+      "id": "blender",
+      "name": "Blender",
+      "description": "Natural language control of Blender for 3D scene creation and rendering",
+      "category": "design",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["blender-mcp"],
+      "env": [],
+      "official": false,
+      "setupUrl": "https://github.com/ahujasid/blender-mcp",
+      "notes": "14K+ GitHub stars. Requires Blender with the companion addon installed."
+    },
+    {
+      "id": "figma-context",
+      "name": "Figma Context MCP",
+      "description": "Provide coding agents direct access to Figma file data for design-to-code",
+      "category": "design",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "figma-developer-mcp"],
+      "env": ["FIGMA_API_KEY"],
+      "official": false,
+      "setupUrl": "https://github.com/GLips/Figma-Context-MCP",
+      "notes": "12K+ GitHub stars. Enables one-shot design implementation."
+    },
+    {
+      "id": "21st-dev",
+      "name": "21st.dev Magic",
+      "description": "Create beautiful, modern UI components from natural language descriptions",
+      "category": "design",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@21st-dev/magic-mcp@latest"],
+      "env": ["TWENTY_FIRST_API_KEY"],
+      "official": true,
+      "setupUrl": "https://github.com/21st-dev/magic-mcp"
+    },
+    {
+      "id": "heroku",
+      "name": "Heroku",
+      "description": "Manage Heroku apps, databases, logs, and deployments",
+      "category": "cloud",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@heroku/mcp-server"],
+      "env": ["HEROKU_API_KEY"],
+      "official": true,
+      "setupUrl": "https://github.com/heroku/heroku-mcp-server"
+    },
+    {
+      "id": "firebase",
+      "name": "Firebase",
+      "description": "Manage Firebase projects, databases, auth, and hosting",
+      "category": "cloud",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "firebase-tools@latest", "--open-sesame", "mcp"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://firebase.google.com/docs/cli/mcp-server"
+    },
+    {
+      "id": "ramp",
+      "name": "Ramp",
+      "description": "Search, access, and analyze your Ramp financial data",
+      "category": "finance",
+      "transport": "http",
+      "url": "https://ramp-mcp-remote.ramp.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://ramp.com"
+    },
+    {
+      "id": "mercury",
+      "name": "Mercury",
+      "description": "Search, analyze, and understand your finances on Mercury",
+      "category": "finance",
+      "transport": "http",
+      "url": "https://mcp.mercury.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://mercury.com"
+    },
+    {
+      "id": "close",
+      "name": "Close CRM",
+      "description": "Connect Claude to Close CRM to access and act on your sales data",
+      "category": "crm",
+      "transport": "http",
+      "url": "https://mcp.close.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developer.close.com"
+    },
+    {
+      "id": "day-ai",
+      "name": "Day AI",
+      "description": "Analyze and update CRM records with AI-powered insights",
+      "category": "crm",
+      "transport": "http",
+      "url": "https://day.ai/api/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://day.ai"
+    },
+    {
+      "id": "fellow",
+      "name": "Fellow.ai",
+      "description": "Chat with your meetings to uncover actionable insights",
+      "category": "productivity",
+      "transport": "http",
+      "url": "https://fellow.app/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://fellow.app"
+    },
+    {
+      "id": "circleback",
+      "name": "Circleback",
+      "description": "Search and access context from meetings",
+      "category": "productivity",
+      "transport": "http",
+      "url": "https://app.circleback.ai/api/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://circleback.ai"
+    },
+    {
+      "id": "fireflies",
+      "name": "Fireflies",
+      "description": "Analyze and generate insights from meeting transcripts",
+      "category": "productivity",
+      "transport": "http",
+      "url": "https://api.fireflies.ai/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://fireflies.ai"
+    },
+    {
+      "id": "clockwise",
+      "name": "Clockwise",
+      "description": "Advanced scheduling and time management for work",
+      "category": "productivity",
+      "transport": "http",
+      "url": "https://mcp.getclockwise.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.getclockwise.com"
+    },
+    {
+      "id": "gamma",
+      "name": "Gamma",
+      "description": "Create presentations, docs, social content, and sites with AI",
+      "category": "productivity",
+      "transport": "http",
+      "url": "https://mcp.gamma.app/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://gamma.app"
+    },
+    {
+      "id": "mermaid",
+      "name": "Mermaid Chart",
+      "description": "Validates and renders Mermaid diagrams as PNG images",
+      "category": "design",
+      "transport": "http",
+      "url": "https://mcp.mermaidchart.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.mermaidchart.com"
+    },
+    {
+      "id": "excel",
+      "name": "Excel",
+      "description": "Create, manipulate, format, and analyze Excel spreadsheets",
+      "category": "productivity",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["excel-mcp-server"],
+      "env": [],
+      "official": false,
+      "setupUrl": "https://github.com/haris-musa/excel-mcp-server",
+      "notes": "3K+ GitHub stars. Popular community server."
+    },
+    {
+      "id": "huggingface",
+      "name": "Hugging Face",
+      "description": "Access the Hugging Face Hub and thousands of Gradio apps and models",
+      "category": "ai-ml",
+      "transport": "http",
+      "url": "https://huggingface.co/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://huggingface.co"
+    },
+    {
+      "id": "exa",
+      "name": "Exa",
+      "description": "AI-powered semantic web search for finding similar and relevant content",
+      "category": "search",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "exa-mcp-server"],
+      "env": ["EXA_API_KEY"],
+      "official": true,
+      "setupUrl": "https://github.com/exa-labs/exa-mcp-server",
+      "notes": "3K+ GitHub stars. Paid API."
+    },
+    {
+      "id": "smartsheet",
+      "name": "Smartsheet",
+      "description": "Analyze and manage Smartsheet data with Claude",
+      "category": "productivity",
+      "transport": "http",
+      "url": "https://mcp.smartsheet.com",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://smartsheet.com"
+    },
+    {
+      "id": "jotform",
+      "name": "Jotform",
+      "description": "Create forms and analyze submissions inside Claude",
+      "category": "productivity",
+      "transport": "http",
+      "url": "https://mcp.jotform.com/",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.jotform.com"
+    },
+    {
+      "id": "bitly",
+      "name": "Bitly",
+      "description": "Shorten links, generate QR Codes, and track link performance",
+      "category": "marketing",
+      "transport": "http",
+      "url": "https://api-ssl.bitly.com/v4/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://dev.bitly.com"
+    },
+    {
+      "id": "similarweb",
+      "name": "Similarweb",
+      "description": "Real-time web traffic, mobile app, and market analytics data",
+      "category": "analytics",
+      "transport": "http",
+      "url": "https://mcp.similarweb.com",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.similarweb.com"
+    },
+    {
+      "id": "desktop-commander",
+      "name": "Desktop Commander",
+      "description": "Edit files, run terminal commands, and connect to remote servers via SSH",
+      "category": "utilities",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic/desktop-commander-mcp"],
+      "env": [],
+      "official": false,
+      "setupUrl": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+      "notes": "5K+ GitHub stars. One of the most popular local MCP servers."
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "description": "Read, search, create, and manage notes in your Obsidian vault",
+      "category": "productivity",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "obsidian-mcp"],
+      "env": [],
+      "official": false,
+      "setupUrl": "https://github.com/smithery-ai/mcp-obsidian",
+      "notes": "Requires Obsidian Local REST API plugin"
+    },
+    {
+      "id": "todoist",
+      "name": "Todoist",
+      "description": "Manage tasks, projects, and labels in Todoist",
+      "category": "productivity",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@abhiz123/todoist-mcp-server"],
+      "env": ["TODOIST_API_TOKEN"],
+      "official": false,
+      "setupUrl": "https://github.com/abhiz123/todoist-mcp-server"
+    },
+    {
+      "id": "chrome-devtools",
+      "name": "Chrome DevTools",
+      "description": "Debug web pages directly in Chrome with runtime insights and debugging capabilities",
+      "category": "development",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic/chrome-devtools-mcp"],
+      "env": [],
+      "official": true,
+      "setupUrl": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "notes": "16K+ GitHub stars. Official Google Chrome team project."
+    },
+    {
+      "id": "browser-tools",
+      "name": "Browser Tools MCP",
+      "description": "Console logs, network monitoring, screenshots, DOM selection, Lighthouse audits",
+      "category": "development",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic/browser-tools-mcp"],
+      "env": [],
+      "official": false,
+      "setupUrl": "https://github.com/agentdeskai/browser-tools-mcp",
+      "notes": "7K+ GitHub stars. Requires companion browser extension."
+    },
+    {
+      "id": "aws-marketplace",
+      "name": "AWS Marketplace",
+      "description": "Discover, evaluate, and buy cloud solutions from AWS Marketplace",
+      "category": "cloud",
+      "transport": "http",
+      "url": "https://marketplace-mcp.us-east-1.api.aws/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://aws.amazon.com/marketplace/"
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab",
+      "description": "Manage GitLab repos, merge requests, CI/CD pipelines, and issues",
+      "category": "development",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["gitlab-mcp-server"],
+      "env": ["GITLAB_TOKEN", "GITLAB_URL"],
+      "official": false,
+      "setupUrl": "https://github.com/modelcontextprotocol/servers"
+    },
+    {
+      "id": "datadog",
+      "name": "Datadog",
+      "description": "Query metrics, logs, traces, and manage monitors from Datadog",
+      "category": "observability",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@datadog/mcp-server-datadog"],
+      "env": ["DD_API_KEY", "DD_APP_KEY"],
+      "official": true,
+      "setupUrl": "https://github.com/DataDog/datadog-mcp-server"
+    },
+    {
+      "id": "grafana",
+      "name": "Grafana",
+      "description": "Search dashboards, query datasources, and manage incidents in Grafana",
+      "category": "observability",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "mcp-server-grafana"],
+      "env": ["GRAFANA_URL", "GRAFANA_API_KEY"],
+      "official": false,
+      "setupUrl": "https://github.com/grafana/mcp-grafana"
+    },
+    {
+      "id": "cdata",
+      "name": "CData Connect AI",
+      "description": "Managed MCP platform connecting to 350+ data sources",
+      "category": "databases",
+      "transport": "http",
+      "url": "https://mcp.cloud.cdata.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.cdata.com"
+    },
+    {
+      "id": "motherduck",
+      "name": "MotherDuck",
+      "description": "Analyze your data with natural language using DuckDB in the cloud",
+      "category": "databases",
+      "transport": "http",
+      "url": "https://api.motherduck.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://motherduck.com"
+    },
+    {
+      "id": "egnyte",
+      "name": "Egnyte",
+      "description": "Securely access and analyze Egnyte enterprise content",
+      "category": "storage",
+      "transport": "http",
+      "url": "https://mcp-server.egnyte.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://developers.egnyte.com"
+    },
+    {
+      "id": "clay",
+      "name": "Clay",
+      "description": "Find prospects, research accounts, and personalize outreach",
+      "category": "sales",
+      "transport": "http",
+      "url": "https://api.clay.com/v3/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.clay.com"
+    },
+    {
+      "id": "crossbeam",
+      "name": "Crossbeam",
+      "description": "Explore partner data and ecosystem insights",
+      "category": "sales",
+      "transport": "http",
+      "url": "https://mcp.crossbeam.com",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.crossbeam.com"
+    },
+    {
+      "id": "zoominfo",
+      "name": "ZoomInfo",
+      "description": "Enrich contacts and accounts with go-to-market intelligence",
+      "category": "sales",
+      "transport": "http",
+      "url": "https://mcp.zoominfo.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.zoominfo.com"
+    },
+    {
+      "id": "harmonic",
+      "name": "Harmonic",
+      "description": "Discover, research, and enrich companies and people",
+      "category": "sales",
+      "transport": "http",
+      "url": "https://mcp.api.harmonic.ai",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.harmonic.ai"
+    },
+    {
+      "id": "pubmed",
+      "name": "PubMed",
+      "description": "Search biomedical literature from PubMed",
+      "category": "research",
+      "transport": "http",
+      "url": "https://pubmed.mcp.claude.com/mcp",
+      "auth": "none",
+      "official": true,
+      "setupUrl": "https://pubmed.ncbi.nlm.nih.gov"
+    },
+    {
+      "id": "scholar-gateway",
+      "name": "Scholar Gateway",
+      "description": "Enhance responses with scholarly research and citations",
+      "category": "research",
+      "transport": "http",
+      "url": "https://connector.scholargateway.ai/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://scholargateway.ai"
+    },
+    {
+      "id": "kiwi",
+      "name": "Kiwi.com",
+      "description": "Search and compare flights across airlines",
+      "category": "travel",
+      "transport": "http",
+      "url": "https://mcp.kiwi.com",
+      "auth": "none",
+      "official": true,
+      "setupUrl": "https://www.kiwi.com"
+    },
+    {
+      "id": "trivago",
+      "name": "Trivago",
+      "description": "Find your ideal hotel at the best price",
+      "category": "travel",
+      "transport": "http",
+      "url": "https://mcp.trivago.com/mcp",
+      "auth": "none",
+      "official": true,
+      "setupUrl": "https://www.trivago.com"
+    },
+    {
+      "id": "lastminute",
+      "name": "lastminute.com",
+      "description": "Search, compare, and book flights across global airlines",
+      "category": "travel",
+      "transport": "http",
+      "url": "https://mcp.lastminute.com/mcp",
+      "auth": "none",
+      "official": true,
+      "setupUrl": "https://www.lastminute.com"
+    },
+    {
+      "id": "wyndham",
+      "name": "Wyndham Hotels",
+      "description": "Discover the right Wyndham Hotel for you, faster",
+      "category": "travel",
+      "transport": "http",
+      "url": "https://mcp.wyndhamhotels.com/claude/mcp",
+      "auth": "none",
+      "official": true,
+      "setupUrl": "https://www.wyndhamhotels.com"
+    },
+    {
+      "id": "indeed",
+      "name": "Indeed",
+      "description": "Search for jobs on Indeed",
+      "category": "productivity",
+      "transport": "http",
+      "url": "https://mcp.indeed.com/claude/mcp",
+      "auth": "none",
+      "official": true,
+      "setupUrl": "https://www.indeed.com"
+    },
+    {
+      "id": "morningstar",
+      "name": "Morningstar",
+      "description": "Up-to-date investment and market insights",
+      "category": "finance",
+      "transport": "http",
+      "url": "https://mcp.morningstar.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.morningstar.com"
+    },
+    {
+      "id": "sp-global",
+      "name": "S&P Global",
+      "description": "Query a range of S&P Global financial datasets",
+      "category": "finance",
+      "transport": "http",
+      "url": "https://kfinance.kensho.com/integrations/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.spglobal.com"
+    },
+    {
+      "id": "moodys",
+      "name": "Moody's",
+      "description": "Risk insights, analytics, and decision intelligence",
+      "category": "finance",
+      "transport": "http",
+      "url": "https://api.moodys.com/genai-ready-data/m1/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.moodys.com"
+    },
+    {
+      "id": "crypto-com",
+      "name": "Crypto.com",
+      "description": "Real-time crypto prices, orders, charts, and market data",
+      "category": "finance",
+      "transport": "http",
+      "url": "https://mcp.crypto.com/market-data/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://crypto.com"
+    },
+    {
+      "id": "lilt",
+      "name": "LILT",
+      "description": "High-quality translation with human verification",
+      "category": "utilities",
+      "transport": "http",
+      "url": "https://mcp.lilt.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://lilt.com"
+    },
+    {
+      "id": "devrev",
+      "name": "DevRev",
+      "description": "Search and update your company's knowledge graph",
+      "category": "development",
+      "transport": "http",
+      "url": "https://api.devrev.ai/mcp/v1",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://devrev.ai"
+    },
+    {
+      "id": "guru",
+      "name": "Guru",
+      "description": "Search and interact with your company knowledge base",
+      "category": "productivity",
+      "transport": "http",
+      "url": "https://mcp.api.getguru.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://www.getguru.com"
+    },
+    {
+      "id": "windsor",
+      "name": "Windsor.ai",
+      "description": "Connect 325+ marketing, analytics, and CRM data sources",
+      "category": "analytics",
+      "transport": "http",
+      "url": "https://mcp.windsor.ai",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://windsor.ai"
+    },
+    {
+      "id": "udemy",
+      "name": "Udemy Business",
+      "description": "Search and explore skill-building resources and courses",
+      "category": "education",
+      "transport": "http",
+      "url": "https://api.udemy.com/mcp",
+      "auth": "oauth",
+      "official": true,
+      "setupUrl": "https://business.udemy.com"
+    }
+  ],
+  "categories": {
+    "productivity": "Productivity & Collaboration",
+    "development": "Development Tools",
+    "project-management": "Project Management",
+    "databases": "Databases & Data",
+    "cloud": "Cloud & Infrastructure",
+    "communication": "Communication & Messaging",
+    "crm": "CRM & Sales Tools",
+    "payments": "Payments & Billing",
+    "automation": "Automation & Integration",
+    "browser-automation": "Browser Automation & Scraping",
+    "design": "Design & Creative",
+    "marketing": "Marketing & SEO",
+    "analytics": "Analytics & Insights",
+    "finance": "Finance & Investment",
+    "storage": "File Storage & Management",
+    "search": "Search & Discovery",
+    "utilities": "Utilities & General Tools",
+    "cms": "CMS & Website Builders",
+    "ecommerce": "E-Commerce",
+    "support": "Customer Support",
+    "domains": "Domains & DNS",
+    "travel": "Travel & Hospitality",
+    "research": "Research & Academic",
+    "ai-ml": "AI & Machine Learning",
+    "observability": "Observability & Monitoring",
+    "sales": "Sales Intelligence",
+    "education": "Education & Learning"
+  }
 }
