@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your MCP Contxt Download Link</title>
+    <title>You're on the list!</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f4;">
     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f5f5f4;">
@@ -15,7 +15,7 @@
                         <td style="padding: 40px 40px 30px; text-align: center;">
                             <img src="{{ url('images/app-icon.png') }}" alt="MCP Contxt" width="64" height="64" style="border-radius: 12px;">
                             <h1 style="margin: 20px 0 0; font-size: 24px; font-weight: 600; color: #1b1b18;">
-                                MCP Contxt
+                                You're on the list!
                             </h1>
                         </td>
                     </tr>
@@ -24,32 +24,15 @@
                     <tr>
                         <td style="padding: 0 40px 30px;">
                             <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: #706f6c; text-align: center;">
-                                Thanks for your interest in MCP Contxt! Click the button below to download version {{ $version }} for macOS.
+                                Thanks for signing up! You've joined <strong style="color: #1b1b18;">{{ number_format($waitlistCount) }}</strong> {{ $waitlistCount === 1 ? 'person' : 'others' }} waiting for MCP Contxt.
                             </p>
 
-                            <!-- Download Button -->
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                <tr>
-                                    <td style="text-align: center; padding: 10px 0 20px;">
-                                        <a href="{{ $downloadUrl }}" style="display: inline-block; padding: 14px 32px; background-color: #DD2C25; color: #ffffff; text-decoration: none; font-size: 16px; font-weight: 500; border-radius: 8px;">
-                                            Download for macOS
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
+                            <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: #706f6c; text-align: center;">
+                                We'll send you an email as soon as the app is ready to download.
+                            </p>
 
                             <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #a1a09a; text-align: center;">
-                                This link expires in 24 hours. Requires macOS 14.6 or later.
-                            </p>
-                        </td>
-                    </tr>
-
-                    <!-- Fallback URL -->
-                    <tr>
-                        <td style="padding: 0 40px 30px;">
-                            <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #a1a09a; text-align: center; word-break: break-all;">
-                                If the button doesn't work, copy and paste this link:<br>
-                                <a href="{{ $downloadUrl }}" style="color: #DD2C25;">{{ $downloadUrl }}</a>
+                                MCP Contxt is a macOS menu bar app that makes it easy to manage MCP servers for Claude Code.
                             </p>
                         </td>
                     </tr>
