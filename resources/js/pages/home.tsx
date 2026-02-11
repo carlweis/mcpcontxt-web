@@ -36,7 +36,7 @@ const features = [
     {
         title: 'Browse & Discover',
         description:
-            'Explore a curated catalog of 100+ MCP servers. Search by name, category, or capability to find the perfect tools for your workflow. Each server includes detailed descriptions, usage examples, and configuration options.',
+            'Explore a growing catalog of MCP servers. Search by name, category, or capability to find the perfect tools for your workflow. Each server includes detailed descriptions, usage examples, and configuration options.',
         screenshot: '/images/screenshots/browse-mcp-servers.png',
     },
     {
@@ -139,7 +139,7 @@ export default function Home({ launched }: Props) {
                 />
                 <meta
                     name="description"
-                    content="The missing management interface for MCP servers in Claude Code. Browse, install, and manage 100+ servers from your menu bar."
+                    content="The missing management interface for MCP servers in Claude Code. Browse, install, and manage servers from your menu bar."
                 />
             </Head>
 
@@ -207,8 +207,7 @@ export default function Home({ launched }: Props) {
                                 <p className="mb-8 text-lg text-[#706f6c] dark:text-[#A1A09A]">
                                     Browse, install, and manage MCP servers for
                                     Claude Code from your menu bar. No more
-                                    editing JSON files. No more terminal
-                                    commands.
+                                    editing JSON files.
                                 </p>
 
                                 {launched ? (
@@ -366,7 +365,7 @@ export default function Home({ launched }: Props) {
                     <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#DD2C25]/40 to-transparent" />
                     <div className="mx-auto max-w-6xl px-6 text-center">
                         <h2 className="mb-3 text-2xl font-semibold">
-                            Works with 100+ MCP servers
+                            Works with popular MCP servers
                         </h2>
                         <p className="mb-12 text-[#706f6c] dark:text-[#A1A09A]">
                             Including popular services you already use
@@ -395,10 +394,10 @@ export default function Home({ launched }: Props) {
                             ))}
                             <div className="flex flex-col items-center gap-3">
                                 <span className="flex size-12 items-center justify-center text-lg font-semibold text-[#DD2C25]">
-                                    +95
+                                    & more
                                 </span>
                                 <span className="text-sm text-[#706f6c] dark:text-[#A1A09A]">
-                                    more
+                                    coming soon
                                 </span>
                             </div>
                         </div>
