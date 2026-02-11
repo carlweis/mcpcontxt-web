@@ -12,6 +12,7 @@ class SendLaunchEmails extends Command
 {
     protected $signature = 'mcpcontxt:send-launch-emails
                             {--dry-run : Show what would be sent without actually sending}
+                            {--force : Skip confirmation prompt}
                             {--limit= : Limit the number of emails to send}';
 
     protected $description = 'Send download link emails to all waitlist subscribers';
@@ -44,7 +45,7 @@ class SendLaunchEmails extends Command
             return self::SUCCESS;
         }
 
-        if (! $this->confirm('Send download link emails to these subscribers?')) {
+        if (! $this->option('force') && ! $this->confirm('Send download link emails to these subscribers?')) {
             $this->info('Cancelled.');
 
             return self::SUCCESS;
