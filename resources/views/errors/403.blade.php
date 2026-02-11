@@ -86,7 +86,7 @@
             </div>
 
             <footer class="absolute bottom-6 text-sm text-neutral-500 dark:text-neutral-500">
-                &copy; {{ date('Y') }} OpcodeZero
+                &copy; {{ date('Y') }} Carl Weis
             </footer>
         </div>
     </body>

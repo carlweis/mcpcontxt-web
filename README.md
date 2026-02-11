@@ -33,7 +33,7 @@ MCP Contxt is a native macOS application that makes it easy to browse, install, 
 
 ```bash
 # Clone the repository
-git clone https://github.com/opcodezerohq/mcpcontxt-web.git
+git clone https://github.com/carlweis/mcpcontxt-web.git
 cd mcpcontxt
 
 # Install dependencies
@@ -118,4 +118,4 @@ composer refactor       # Apply changes
 
 ## License
 
-(C) 2026 OpcodeZero
+(C) 2026 Carl Weis
