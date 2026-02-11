@@ -1,7 +1,26 @@
 <?php
 
 use App\Models\Subscriber;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\URL;
+
+function fakeGitHubRelease(): void
+{
+    Cache::forget('github:latest-release');
+
+    Http::fake([
+        'api.github.com/repos/carlweis/mcpcontxt/releases/latest' => Http::response([
+            'tag_name' => 'v1.2.0',
+            'assets' => [
+                [
+                    'name' => 'MCPContxt-v1.2.0.dmg',
+                    'browser_download_url' => 'https://github.com/carlweis/mcpcontxt/releases/download/v1.2.0/MCPContxt-v1.2.0.dmg',
+                ],
+            ],
+        ]),
+    ]);
+}
 
 test('download requires valid signature', function () {
     $response = $this->get(route('download'));
@@ -28,7 +47,7 @@ test('download rejects expired signature', function () {
 });
 
 test('download accepts valid signed url', function () {
-    config(['filesystems.disks.r2.url' => 'https://releases.mcpcontxt.com']);
+    fakeGitHubRelease();
 
     $subscriber = Subscriber::factory()->download()->create();
 
@@ -41,11 +60,11 @@ test('download accepts valid signed url', function () {
     $response = $this->get($url);
 
     $response->assertRedirect();
-    expect($response->headers->get('Location'))->toContain('releases.mcpcontxt.com');
+    expect($response->headers->get('Location'))->toContain('github.com/carlweis/mcpcontxt/releases');
 });
 
 test('download creates download record', function () {
-    config(['filesystems.disks.r2.url' => 'https://releases.mcpcontxt.com']);
+    fakeGitHubRelease();
 
     $subscriber = Subscriber::factory()->download()->create();
 
@@ -59,12 +78,12 @@ test('download creates download record', function () {
 
     $this->assertDatabaseHas('downloads', [
         'subscriber_id' => $subscriber->id,
-        'version' => config('app.version', '1.0.0'),
+        'version' => '1.2.0',
     ]);
 });
 
 test('download links record to subscriber', function () {
-    config(['filesystems.disks.r2.url' => 'https://releases.mcpcontxt.com']);
+    fakeGitHubRelease();
 
     $subscriber = Subscriber::factory()->download()->create();
 
@@ -79,11 +98,8 @@ test('download links record to subscriber', function () {
     expect($subscriber->downloads()->count())->toBe(1);
 });
 
-test('download redirects to r2 url with version', function () {
-    config([
-        'filesystems.disks.r2.url' => 'https://releases.mcpcontxt.com',
-        'app.version' => '1.2.3',
-    ]);
+test('download redirects to github release dmg', function () {
+    fakeGitHubRelease();
 
     $subscriber = Subscriber::factory()->download()->create();
 
@@ -95,11 +111,11 @@ test('download redirects to r2 url with version', function () {
 
     $response = $this->get($url);
 
-    $response->assertRedirect('https://releases.mcpcontxt.com/releases/MCPContxt-1.2.3.dmg');
+    $response->assertRedirect('https://github.com/carlweis/mcpcontxt/releases/download/v1.2.0/MCPContxt-v1.2.0.dmg');
 });
 
 test('download works without subscriber record', function () {
-    config(['filesystems.disks.r2.url' => 'https://releases.mcpcontxt.com']);
+    fakeGitHubRelease();
 
     $url = URL::temporarySignedRoute(
         'download',
@@ -114,4 +130,43 @@ test('download works without subscriber record', function () {
     $this->assertDatabaseHas('downloads', [
         'subscriber_id' => null,
     ]);
+});
+
+test('download returns 503 when github api is unavailable', function () {
+    Cache::forget('github:latest-release');
+
+    Http::fake([
+        'api.github.com/repos/carlweis/mcpcontxt/releases/latest' => Http::response(null, 500),
+    ]);
+
+    $url = URL::temporarySignedRoute(
+        'download',
+        now()->addDay(),
+        ['email' => 'test@example.com']
+    );
+
+    $response = $this->get($url);
+
+    $response->assertServiceUnavailable();
+});
+
+test('download returns 503 when no dmg asset in release', function () {
+    Cache::forget('github:latest-release');
+
+    Http::fake([
+        'api.github.com/repos/carlweis/mcpcontxt/releases/latest' => Http::response([
+            'tag_name' => 'v1.0.0',
+            'assets' => [],
+        ]),
+    ]);
+
+    $url = URL::temporarySignedRoute(
+        'download',
+        now()->addDay(),
+        ['email' => 'test@example.com']
+    );
+
+    $response = $this->get($url);
+
+    $response->assertServiceUnavailable();
 });
